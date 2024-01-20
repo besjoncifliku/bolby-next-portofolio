@@ -1,0 +1,132 @@
+.about-me {
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 80px 40px;
+  height: 58%;
+  z-index: 1;
+}
+
+/* About Image Section */
+.about-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 60px;
+  color: #353353;
+
+  > .about-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 60px;
+
+    > .about-profile-image {
+
+      > img {
+        width: 150px;
+      }
+    }
+
+    > .icon-section {
+      padding: 40px 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      > .icon {
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
+        > i {
+          font-size: 26px;
+          margin-right: 20px;
+          color: #a4a4a4;
+        }
+      }
+      > h3 {
+        margin-top: -15px;
+        color: #a4a4a4;
+        font-weight: 200;
+      }
+    }
+  }
+}
+
+/* About Text Section */
+.about-text {
+  background-color: #fff;
+  width: 100%;
+  padding: 40px 30px;
+  margin-bottom: 25px;
+  border-radius: 20px !important;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid #FFF;
+    position: absolute;
+    left: -13px;
+    top: 20%;
+    z-index: 100;
+  }
+
+  > .paragraph {
+    width: 50%;
+
+    > p {
+      margin-bottom: 2rem;
+      margin-top: 0;
+      font-size: 16px;
+      line-height: 1.7;
+      font-family: "Rubik",sans-serif;
+      color: #5E5C7F;
+    }
+
+    > a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  > .about-skills {
+    width: 50%;
+    margin-left: 25px;
+    display: block;
+
+    > .skill-element {
+      margin-top: 0;
+      margin-bottom: 15px;
+      > .skill-title {
+        display: flex;
+        justify-content: space-between;
+        > span {
+          color: #a4a4a4;
+        }
+        > h3 {
+          font-size: 16px;
+          font-weight: 500;
+          margin-top: 0;
+          margin-bottom: 15px;
+          font-family: "Rubik",sans-serif;
+        }
+      }
+      > .progressBar {
+        margin-top: 0;
+      }
+    }
+  }
+}

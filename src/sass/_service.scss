@@ -1,0 +1,73 @@
+.service {
+  width: 100%;
+  margin: 0 auto;
+  padding: 140px 80px 40px;
+  height: 75%;
+  z-index: 1;
+}
+
+.service-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease-out;
+  width: 100%;
+  margin-top: 50px;
+
+  > .service-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 31%;
+    line-height: 1.4;
+    cursor: pointer;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      -webkit-transform: translateY(-20px);
+      -ms-transform: translateY(-20px);
+      -moz-transform: translateY(-20px);
+      transform: translate(0, -20px);;
+    }
+
+    > .service-icon {
+        width: 40%;
+    }
+    > .service-info {
+      text-align: center;
+    }
+  }
+}
+
+.yellow {
+  background-color: #ffd15c;
+  color: #5E5C7F;
+  > .service-title {
+    color: #454360;
+  }
+}
+
+.red {
+  background-color: #ff7769;
+  > .service-info {
+    color: #fff;
+  }
+  > .service-icon img {
+    width: 100%;
+  }
+  > .service-title {
+    color: #fff;
+  }
+}
+
+.blue {
+  background-color: #20779b;
+  color: #fff;
+  > .service-title {
+    color: #fff;
+  }
+}

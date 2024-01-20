@@ -1,0 +1,130 @@
+import React from 'react'
+import Swal from 'sweetalert2';
+import Image from "next/image";
+import { Formik } from 'formik';
+
+import {
+    ContactForm,
+    ContactInput,
+    ContactButton,
+    ContactCredentials,
+    ContactMessage,
+    ContactSubject,
+    ErrorMessage,
+    ContactInputBlock
+} from "@/utils/helper.utils";
+
+import '../../sass/_work.scss';
+import '../../utils/helper.utils';
+
+export const ContactView = () => {
+    return (
+        <div className="contact-container">
+            <h2 className={'header-title'}>Drop Me a Line<span>.</span></h2>
+            <div className="contact-form-container">
+                <div className={'contact-description'}>
+                    <h2>Get In Touch!</h2>
+                    {/* eslint-disable-next-line react/no-unescaped-entities */}
+                    <p>Don't like forms? Send me an <a href={'#'} className={'link'}>email</a>👋.</p>
+                    <Image
+                        src='../../assets/images/contact.svg'
+                        className={'contact-me-image'}
+                        alt={'Contact me'}
+                    />
+                </div>
+                <div className={'contact-form'}>
+                    <Formik
+                        initialValues={{ name: '', email: '', subject: '', message: '' }}
+                        validate={values => {
+                            const errors: any = {};
+                            if (!values.email) {
+                                errors.email = 'This field is required!';
+                            } else if (
+                                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                            ) {
+                                errors.email = 'Invalid email address';
+                            }
+                            if (!values.name) {
+                                errors.name = 'This field is required!';
+                            }
+                            if (!values.message) {
+                                errors.message = 'This field is required!';
+                            }
+                            return errors;
+                        }}
+                        onSubmit={(values, { setSubmitting }) => {
+                            setTimeout(() => {
+                                Swal.fire({
+                                    title: 'Message sent successfully!',
+                                    text: `👋 Thanks for the message, ${values.name}! I will get back to you soon 😃`,
+                                    icon: 'success'
+                                });
+                                setSubmitting(false);
+                            }, 400);
+                        }}
+                    >
+                        {({
+                              values,
+                              errors,
+                              touched,
+                              handleChange,
+                              handleBlur,
+                              handleSubmit,
+                              isSubmitting,
+                              /* and other goodies */
+                          }) => (
+                            <ContactForm onSubmit={handleSubmit}>
+                                <ContactCredentials>
+                                    <ContactInputBlock>
+                                        <ContactInput
+                                            type="text"
+                                            name="name"
+                                            placeholder="Name"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.name}
+                                        />
+                                        <ErrorMessage>{errors.name}</ErrorMessage>
+                                    </ContactInputBlock>
+                                    <ContactInputBlock>
+                                        <ContactInput
+                                            type="email"
+                                            name="email"
+                                            placeholder="E-mail Address"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.email}
+                                        />
+                                        <ErrorMessage>{errors.email && touched.email && errors.email}</ErrorMessage>
+                                    </ContactInputBlock>
+                                </ContactCredentials>
+                                <ContactSubject
+                                    type="text"
+                                    name="subject"
+                                    placeholder="Subject"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.subject}
+                                />
+                                <ContactInputBlock>
+                                    <ContactMessage
+                                        name="message"
+                                        placeholder="Type your message..."
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.message}
+                                    />
+                                    <ErrorMessage>{errors.message}</ErrorMessage>
+                                </ContactInputBlock>
+                                <ContactButton type="submit" disabled={isSubmitting}>
+                                    Send Message
+                                </ContactButton>
+                            </ContactForm>
+                        )}
+                    </Formik>
+                </div>
+            </div>
+        </div>
+    );
+}
+

@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Bonn Universität",
+    "description": "Master of Science - Computer Science",
+    "timeline": "2020 - 2022",
+    "role": "education",
+    "display": true
+  },
+  {
+    "title": "Epoka University",
+    "description": "Bachelor of Computer Engineering",
+    "timeline": "2017 - 2020",
+    "role": "education",
+    "display": true
+  },
+  {
+    "title": "Mehmet Akif",
+    "description": "College - High School",
+    "timeline": "2015 - 2017",
+    "role": "education",
+    "display": false
+  },
+  {
+    "title": "Fullstack Developer",
+    "description": "C2S2 - Wekstudent",
+    "timeline": "2021 - Ongoing",
+    "role": "work",
+    "display": true
+  },
+  {
+    "title": "PL/SQL Flexcube Developer",
+    "description": "Facilization sh.p.k - Student Intern",
+    "timeline": "2020 - 2020",
+    "role": "work",
+    "display": true
+  },
+  {
+    "title": "Research Assistant",
+    "description": "Research & Project Office - Student Intern",
+    "timeline": "2018 - 2019",
+    "role": "work",
+    "display": false
+  }
+]

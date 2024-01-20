@@ -1,0 +1,60 @@
+.experience {
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 80px 40px;
+  height: 30%;
+  z-index: 1;
+}
+
+.experience-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  > .learning-box {
+    width: 49%;
+    background-color: #fff;
+    height: 520px;
+    > div {
+      padding-top: 20px;
+      display: flex;
+      justify-content: flex-start;
+      margin-left: -85%;
+    }
+
+  }
+  > .experience-box {
+    width: 49%;
+    background-color: #fff;
+    height: 520px;
+    > div {
+      padding-top: 20px;
+      display: flex;
+      justify-content: flex-start;
+      margin-left: -85%;
+    }
+  }
+}
+
+/* Experience Element */
+.experience-element {
+  padding: 7px 20px;
+  margin-bottom: 10px;
+  > .experience-timeline {
+    margin-bottom: -10px;
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    color: #5E5C7F;
+  }
+  > .experience-title {
+    margin-bottom: -10px;
+    font-family: "Rubik", sans-serif;
+    color: #454360;
+  }
+}
+
+.experience-element p {
+  line-height: 1.7;
+  font-family: "Rubik", sans-serif;
+  color: #5E5C7F;
+}
