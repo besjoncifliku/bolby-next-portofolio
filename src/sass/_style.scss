@@ -1,24 +1,29 @@
 ////////////////////////////////////////
 /////////////Main Page Style////////////
 ////////////////////////////////////////
+
 .content-container {
-  width: 100%;
   height: 100vh;
   min-height: 100vh;
   display: block;
-  margin-left: 290px;
   overflow: auto;
   background-color: #f9f9ff;
+
 }
 
 .content-container-limited-width {
   // normal view bigger screen
-  width: 75%;
-  margin-left: 12.5%;
-  // 15 inch laptop view
-  @media (max-width: 1800px) {
-    width: 100%;
-    margin-left: 0%;
+  margin-left: 254px;
+
+  // 15 inch laptop view bigger - 1800px
+  @media (min-width: 1900px) {
+    width: 72%;
+    margin-left: 20%;
+  }
+
+  @media (min-width: 3000px) {
+    width: 63%;
+    margin-left: 26.5%;
   }
 }
 

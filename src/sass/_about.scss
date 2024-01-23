@@ -41,10 +41,9 @@
         justify-content: center;
         justify-content: space-between;
         align-items: center;
-        > i {
-          font-size: 26px;
-          margin-right: 20px;
-          color: #a4a4a4;
+        > svg {
+          font-size: 78px;
+          margin-top: -30px;
         }
       }
       > h3 {
@@ -120,7 +119,7 @@
           font-size: 16px;
           font-weight: 500;
           margin-top: 0;
-          margin-bottom: 15px;
+          margin-bottom: 13px;
           font-family: "Rubik",sans-serif;
         }
       }

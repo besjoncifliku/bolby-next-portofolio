@@ -3,6 +3,8 @@ import Image from 'next/image'
 import CountUp from 'react-countup';
 import '../../sass/_about.scss';
 import { AboutText } from "./aboutText";
+import UserProfileImg from '../../assets/images/about_user_profile.png';
+import CoffeeIcon from '@mui/icons-material/Coffee';
 
 export const AboutView = () => {
     return (
@@ -12,19 +14,17 @@ export const AboutView = () => {
                 <div className={'about-profile'}>
                     <div className={'about-profile-image'}>
                         <Image
-                            src='../../assets/images/about_user_profile.png'
-                            width={500}
-                            height={500}
+                            src={UserProfileImg}
                             className='profile-image'
                             alt='besjon-profile'
                         />
                     </div>
                     <div className={'icon-section'}>
-                        <div className={'icon'}>
-                            <i className="fas fa-coffee"></i>
-                            <h1><CountUp end={1234} /></h1>
+                        <div className={'icon flex-col'}>
+                            <CoffeeIcon className={'text-gray-500 text-8xl'}/>
+                            <h1 className={'text-2xl mt-1 text-gray-500 font-bold'}><CountUp end={12345} /></h1>
                         </div>
-                        <h3>Cups of Coffe</h3>
+                        <h2 className={'mt-0 text-gray-400 font-sans'}>Cups of Coffee</h2>
                     </div>
                 </div>
                 <AboutText />

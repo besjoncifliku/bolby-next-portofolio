@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import '../../sass/_work.scss';
 
-export const BlogElement = (props) => {
+export const BlogElement = (props: any) => {
     const title = props.blogTitle;
     const author = props.author;
     const image = props.blogImagePath;

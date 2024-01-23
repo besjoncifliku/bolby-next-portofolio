@@ -12,10 +12,11 @@ import {
     ContactSubject,
     ErrorMessage,
     ContactInputBlock
-} from "@/utils/helper.utils";
+} from "@/utils/styledComponents.utils";
+import ContactImg from '../../assets/images/contact.svg';
 
 import '../../sass/_work.scss';
-import '../../utils/helper.utils';
+import '../../utils/styledComponents.utils';
 
 export const ContactView = () => {
     return (
@@ -27,7 +28,7 @@ export const ContactView = () => {
                     {/* eslint-disable-next-line react/no-unescaped-entities */}
                     <p>Don't like forms? Send me an <a href={'#'} className={'link'}>email</a>👋.</p>
                     <Image
-                        src='../../assets/images/contact.svg'
+                        src={ContactImg}
                         className={'contact-me-image'}
                         alt={'Contact me'}
                     />

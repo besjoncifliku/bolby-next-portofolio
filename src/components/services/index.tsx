@@ -5,7 +5,6 @@ import Code from '../../assets/images/coding.svg';
 import Test from '../../assets/images/test.svg';
 import Image from "next/image";
 
-
 export const ServiceView = () => {
     return (
         <div className="service">

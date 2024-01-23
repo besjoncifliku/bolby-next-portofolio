@@ -1,15 +1,15 @@
 "use client";
 
-import React from 'react'
+import React  from 'react'
 import './globals.css';
-import { NavigatorView } from "@/components/navigator";
 import { Content } from "@/containers/content";
+import { SidebarView } from "@/components/sidebar";
 
 export default function Home() {
     return (
-        <div className={'main-container'}>
-            <NavigatorView></NavigatorView>
+        <section>
+            <SidebarView></SidebarView>
             <Content></Content>
-        </div>
+        </section>
     );
 }

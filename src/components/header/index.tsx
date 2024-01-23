@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSpring, animated } from  '@react-spring/web'
-import '../../sass/headerStyle.scss';
+import '../../sass/_header.scss';
 import { UserProfile } from "./userProfile";
 
 const calc = (x: number, y: number) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
@@ -17,12 +17,12 @@ export const HeaderView = () => {
         <div className="header-container">
             <UserProfile />
             <div className="animated-container" onMouseMove={({clientX: x, clientY: y}) => set({xy: calc(x, y)})}>
-                <animated.div className="card4" style={{transform: props.xy.interpolate(trans4)}}/>
-                <animated.div className="card6" style={{transform: props.xy.interpolate(trans6)}}/>
-                <animated.div className="card7" style={{transform: props.xy.interpolate(trans7)}}/>
-                <animated.div className="card8" style={{transform: props.xy.interpolate(trans8)}}/>
-                <animated.div className="card9" style={{transform: props.xy.interpolate(trans9)}}/>
-                <animated.div className="card10" style={{transform: props.xy.interpolate(trans10)}}/>
+                <animated.div className="card4" style={{transform: props.xy.to(trans4)}}/>
+                <animated.div className="card6" style={{transform: props.xy.to(trans6)}}/>
+                <animated.div className="card7" style={{transform: props.xy.to(trans7)}}/>
+                <animated.div className="card8" style={{transform: props.xy.to(trans8)}}/>
+                <animated.div className="card9" style={{transform: props.xy.to(trans9)}}/>
+                <animated.div className="card10" style={{transform: props.xy.to(trans10)}}/>
             </div>
         </div>
     );

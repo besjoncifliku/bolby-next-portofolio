@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../sass/_work.scss';
-import {ProjectElement} from "./projectElement";
+import { ProjectElement } from "./projectElement";
 
 export const ProjectView = (props: { projects: string | any[]; category: any; }) => {
     const projects = props.projects;
