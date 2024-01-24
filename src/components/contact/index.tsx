@@ -7,7 +7,6 @@ import {
     ContactForm,
     ContactInput,
     ContactButton,
-    ContactCredentials,
     ContactMessage,
     ContactSubject,
     ErrorMessage,
@@ -26,7 +25,7 @@ export const ContactView = () => {
                 <div className={'contact-description'}>
                     <h2>Get In Touch!</h2>
                     {/* eslint-disable-next-line react/no-unescaped-entities */}
-                    <p>Don't like forms? Send me an <a href={'#'} className={'link'}>email</a>👋.</p>
+                    <p>Filling this form is boring? Then send me an <a href={'#'} className={'link'}>email</a>👋.</p>
                     <Image
                         src={ContactImg}
                         className={'contact-me-image'}
@@ -35,7 +34,7 @@ export const ContactView = () => {
                 </div>
                 <div className={'contact-form'}>
                     <Formik
-                        initialValues={{ name: '', email: '', subject: '', message: '' }}
+                        initialValues={{ email: '', subject: '', message: '' }}
                         validate={values => {
                             const errors: any = {};
                             if (!values.email) {
@@ -44,9 +43,6 @@ export const ContactView = () => {
                                 !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                             ) {
                                 errors.email = 'Invalid email address';
-                            }
-                            if (!values.name) {
-                                errors.name = 'This field is required!';
                             }
                             if (!values.message) {
                                 errors.message = 'This field is required!';
@@ -57,7 +53,7 @@ export const ContactView = () => {
                             setTimeout(() => {
                                 Swal.fire({
                                     title: 'Message sent successfully!',
-                                    text: `👋 Thanks for the message, ${values.name}! I will get back to you soon 😃`,
+                                    text: `👋 Thanks for the message, I will get back to you soon 😃`,
                                     icon: 'success'
                                 });
                                 setSubmitting(false);
@@ -75,30 +71,17 @@ export const ContactView = () => {
                               /* and other goodies */
                           }) => (
                             <ContactForm onSubmit={handleSubmit}>
-                                <ContactCredentials>
-                                    <ContactInputBlock>
-                                        <ContactInput
-                                            type="text"
-                                            name="name"
-                                            placeholder="Name"
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.name}
-                                        />
-                                        <ErrorMessage>{errors.name}</ErrorMessage>
-                                    </ContactInputBlock>
-                                    <ContactInputBlock>
-                                        <ContactInput
-                                            type="email"
-                                            name="email"
-                                            placeholder="E-mail Address"
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.email}
-                                        />
-                                        <ErrorMessage>{errors.email && touched.email && errors.email}</ErrorMessage>
-                                    </ContactInputBlock>
-                                </ContactCredentials>
+                                <ContactInputBlock>
+                                    <ContactInput
+                                        type="email"
+                                        name="email"
+                                        placeholder="E-mail Address"
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.email}
+                                    />
+                                    <ErrorMessage>{errors.email && touched.email && errors.email}</ErrorMessage>
+                                </ContactInputBlock>
                                 <ContactSubject
                                     type="text"
                                     name="subject"

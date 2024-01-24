@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import '../../sass/_work.scss';
-import SpringModal from "../../utils/modal.utils";
+import { SpringModal } from "@/utils/modal.utils";
 export const ProjectElement = (props: any) => {
     const project = props.project;
     const [open, setOpen] = useState(false);

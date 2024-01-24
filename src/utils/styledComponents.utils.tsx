@@ -8,40 +8,37 @@ export const ContactForm = styled.form`
   align-items: center;
 `;
 
-export const ContactCredentials = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 650px;
-`;
-
 export const ContactInput = styled.input`
-  width: 300px;
-  height: 60px;
-  border: 0;
-  border-radius: 30px;
-  background-color: #fff;
-  font-size: 16px;
-  font-weight: 400;
-  color: #454360;
-  line-height: 1.6;
-  padding: 20px;
-  -webkit-box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
-  -moz-box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
-  box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
-  outline: none;
-  font-style: inherit;
-  &:focus {
-    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: #5E5C7F;
-      opacity: 1; /* Firefox */
+    width: 650px;
+    height: 60px;
+    border: 0;
+    border-radius: 30px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    color: #454360;
+    line-height: 1.6;
+    padding: 20px;
+    -webkit-box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
+    -moz-box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
+    box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
+    outline: none;
+    font-style: inherit;
+
+    &:focus {
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #5E5C7F;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #5E5C7F;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #5E5C7F;
+        }
     }
-    :-ms-input-placeholder { /* Internet Explorer 10-11 */
-      color: #5E5C7F;
-    }
-    ::-ms-input-placeholder { /* Microsoft Edge */
-      color: #5E5C7F;
-    }
-  }
 `;
 
 export const ContactSubject = styled(ContactInput)`
@@ -92,7 +89,7 @@ export const ContactButton = styled.button`
   font-family: inherit;
   font-weight: bold;
   font-size: 16px;
-  margin-top: 30px;
+  margin-top: 10px;
 `;
 
 export const ErrorMessage = styled.p`
@@ -108,4 +105,14 @@ export const ErrorMessage = styled.p`
 export const ContactInputBlock = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;  
 `;
+
+export const ProjectElement = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: antiquewhite;
+    width: 70%;
+    border-radius: 10px;
+`

@@ -2,10 +2,8 @@
 ////////////// Work Style //////////////
 ////////////////////////////////////////
 .work {
-  width: 100%;
   margin: 0 auto;
-  padding: 140px 80px 40px;
-  height: 100%;
+  padding: 10px 100px 40px;
 }
 
 .work-filter {
@@ -32,17 +30,13 @@
   color: #ff3e28;
 }
 
-.project-view-container {
-  margin-bottom: 600px;
-  z-index: 99;
-}
+.project-view-container {}
 
 .project-container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  justify-content: space-between;
   line-height: 1.7;
   margin-bottom: 30px;
 }
@@ -156,12 +150,12 @@
 }
 
 ////////////////////////////////////////
-///////////////// Price ////////////////
+/////////// Research Interest //////////
 ////////////////////////////////////////
 .interest-container {
   width: 100%;
   margin: 0 auto;
-  padding: 100px 100px 40px;
+  padding: 10px 100px 40px;
   height: 100%;
   overflow: auto;
 }
@@ -184,6 +178,19 @@
     width: 33.3%;
     background-color: #FFF;
     text-align: center;
+    cursor: pointer;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      -webkit-transform: translateY(-20px);
+      -ms-transform: translateY(-20px);
+      -moz-transform: translateY(-20px);
+      transform: translate(0, -20px);;
+    }
+
     > h3 {
       color: #353353;
       font-size: 24px;
@@ -200,6 +207,7 @@
       color: #8c8a8a;
     }
   }
+
   > .center-pos {
     z-index: 1;
     padding: 85px 55px;
@@ -236,7 +244,7 @@
 .blog-container {
   width: 100%;
   margin: 0 auto;
-  padding: 100px 100px 40px;
+  padding: 10px 100px 40px;
   height: 100%;
   overflow: auto;
 }
@@ -259,7 +267,7 @@
     position: relative;
     height: 40vh;
     width: 31%;
-    background-color: #FFF;
+    background-color: #fcf8f8;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
@@ -274,7 +282,7 @@
       display: flex;
       justify-content: center;
       position: absolute;
-      height: 70%;
+      height: 60%;
       top: 0;
       left: 0;
       border-top-left-radius: 20px;
@@ -296,6 +304,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
+      width: 100%;
       padding: 10px 25px;
       background-color: #fff;
       border-bottom-left-radius: 20px;
@@ -308,12 +317,14 @@
           color: #ff3e28;
         }
       }
+
       > .blog-date {
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         font-size: 14px;
+        margin-top: 10px;
+        padding-bottom: 10px;
         > .datum {
-          margin-right: 40px;
           color: #8d8b8b;
         }
         > .author {
@@ -332,7 +343,7 @@
 .contact-container {
   width: 100%;
   margin: 0 auto;
-  padding: 100px 100px 40px;
+  padding: 20px 100px 40px;
   height: 100%;
   overflow: hidden;
   > .contact-form-container {
@@ -377,5 +388,3 @@
     transform: rotate(360deg);
   }
 }
-
-

@@ -58,7 +58,7 @@
 /* Section Header Style */
 .header-title {
   > span {
-    margin-left: 8px;
+    margin-left: 3px;
     color: #ff3e28;
     font-size: 66px;
   }
@@ -70,15 +70,14 @@
   position: relative;
   z-index: 99;
   margin-left: 15px;
-  margin-bottom: 10px;
 
   &:before {
     content: "";
     background-color: #ffd15c;
     display: block;
     height: 37px;
-    left: -14px;
-    top: 17px;
+    left: -11px;
+    top: 24px;
     position: absolute;
     width: 37px;
     z-index: -1;

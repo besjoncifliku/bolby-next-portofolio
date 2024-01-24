@@ -1,6 +1,5 @@
 import React from 'react'
 import '../../sass/_work.scss';
-import headerProfile from "@/assets/images/user_profile.png";
 import Image from "next/image";
 
 export const InterestElement = (props: { interestTitle: any; interestDescription: any; position: any; interestImagePath: any; }) => {
@@ -21,8 +20,8 @@ export const InterestElement = (props: { interestTitle: any; interestDescription
                 className='user-profile'
             />
             <h3>{title}</h3>
-            <p>{text}</p>
-            <a href="/#" className="button">Get Started</a>
+            <p className={'mt-5 mb-9'}>{text}</p>
+            {position === 'center-pos' ? <a href="/#" className="button absolute bottom-9">Contact Me</a> : ""}
         </div>
     );
 }

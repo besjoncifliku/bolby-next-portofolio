@@ -1,27 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, forwardRef } from 'react';
 import { Modal, Backdrop } from '@mui/material';
 import { animated, useSpring } from '@react-spring/web';
+import { ProjectElement } from "@/utils/styledComponents.utils";
+import PropTypes from 'prop-types';
 
-// const useStyles = makeStyles((theme: any) => ({
-//     modal: {
-//         display: 'flex',
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//     },
-//     paper: {
-//         backgroundColor: theme.palette.background.paper,
-//         border: '2px solid #000',
-//         boxShadow: theme.shadows[5],
-//         padding: theme.spacing(2, 4, 3),
-//     },
-// }));
-
-const Fade = React.forwardRef(function Fade(props: any, ref) {
+const Fade = forwardRef(function Fade(props: any, ref) {
     const {in: open, children, onEnter, onExited, ...other} = props;
     const style = useSpring({
-        from: {opacity: 0},
-        to: {opacity: open ? 1 : 0},
+        from: {
+            opacity: 0
+        },
+        to: {
+            opacity: open ? 1 : 0,
+            display: 'flex',
+            'justify-content': 'center',
+            outline: 'none'
+        },
         onStart: () => {
             if (open && onEnter) {
                 onEnter();
@@ -48,8 +42,8 @@ Fade.propTypes = {
     onExited: PropTypes.func,
 };
 
-export default function SpringModal(props: any) {
-    const [open, setOpen] = React.useState(props.open);
+export const SpringModal = (props: any) => {
+    const [open, setOpen] = useState<boolean>(props.open);
 
     const handleClose = () => {
         setOpen(false);
@@ -64,18 +58,13 @@ export default function SpringModal(props: any) {
             open={open}
             onClose={handleClose}
             closeAfterTransition
-            slots={{ backdrop: Backdrop }}
-            slotProps={{
-                backdrop: {
-                    TransitionComponent: Fade
-                }
-            }}
+            className={'flex items-center content-center justify-items-center justify-center'}
         >
             <Fade in={open}>
-                <div>
+                <ProjectElement>
                     <h2 id="spring-modal-title">{props.project.title}</h2>
                     <p id="spring-modal-description">{props.project.description}</p>
-                </div>
+                </ProjectElement>
             </Fade>
         </Modal>
 

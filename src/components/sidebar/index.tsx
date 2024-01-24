@@ -10,7 +10,7 @@ import '../../sass/_sidebar.scss';
 const sidebarEntries = {
     'Home': HomeIcon,
     'About': PermIdentityIcon,
-    'Services': BusinessCenterIcon,
+    'Research': BusinessCenterIcon,
     'Projects': AssignmentTurnedInIcon,
     'Blog': DriveFileRenameOutlineIcon,
     'Contact': ChatIcon
