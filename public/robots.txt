@@ -1,3 +1,9 @@
 # https://www.robotstxt.org/robotstxt.html
+
+# Please do not use scrapping /crawling tools on this side
+# Otherwise everything is open sourced under MIT license in my Github repo
+# Have fun, peace xD
+# Besjon Cifliku, Software Engineer and Management
+
 User-agent: *
 Disallow:

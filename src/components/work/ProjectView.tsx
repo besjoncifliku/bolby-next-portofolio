@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../../sass/_work.scss';
-import { ProjectElement } from "./projectElement";
+import { ProjectElement } from "./ProjectElement";
 import { useInView, useSpring, animated } from "@react-spring/web";
 import { buildInteractionObserverThreshold } from "@/utils/threshold.utils";
 

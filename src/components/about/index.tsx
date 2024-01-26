@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import CountUp from 'react-countup';
 import '../../sass/_about.scss';
-import { AboutText } from "./aboutText";
+import { AboutText } from "./AboutText";
 import UserProfileImg from '../../assets/images/about_user_profile.png';
 import CoffeeIcon from '@mui/icons-material/Coffee';
 import { useInView, animated } from '@react-spring/web'

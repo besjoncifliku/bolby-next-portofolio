@@ -14,7 +14,7 @@ const sidebarEntries = {
     'Projects': AssignmentTurnedInIcon,
     'Blog': DriveFileRenameOutlineIcon,
     'Contact': ChatIcon
-}
+};
 
 export const SidebarView = () => {
     return (
@@ -75,7 +75,7 @@ export const SidebarView = () => {
                             </button>
                         </div>
                         <p className="mb-3 text-sm text-blue-800 dark:text-blue-400">
-                            Developed in Next JS.
+                            Developed in Next JS. Inspired by :
                         </p>
                         <a className="text-sm text-blue-800 underline font-medium hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
                            href="#">Original Bolby Design - Check it out</a>

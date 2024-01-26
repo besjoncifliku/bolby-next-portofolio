@@ -8,7 +8,7 @@ import TerminalIcon from '@mui/icons-material/Terminal';
 export const UserContent = () => {
     return (
         <div className="user-content">
-            <h2>Besjon</h2>
+            <h2><span className={'font-bold text-yellow-400 text-5xl'}>{'{'}</span> Besjon <span className={'font-bold text-yellow-400 text-5xl'}>{'}'}</span></h2>
             <div className='type-writer'>
                 <Typewriter
                     options={{
@@ -29,7 +29,7 @@ export const UserContent = () => {
                 <LinkedInIcon className='fab' />
                 <TerminalIcon className='fab'/>
             </div>
-            <button className={'hack-me'}>{' > '}hackMyResume() <TerminalIcon /> </button>
+            <button className={'hack-me'}>{' >_ '}hackMyResume() <TerminalIcon /> </button>
             <div className='scroll-me'>
                 <a href="#thanks"><span></span>Scroll Me</a>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSpring, animated } from  '@react-spring/web'
 import '../../sass/_header.scss';
-import { UserProfile } from "./userProfile";
+import { UserProfile } from "./UserProfile";
 
 const calc = (x: number, y: number) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 const trans4 = (x: number, y: number) => `translate3d(${-x / 16 + 55}px,${-y / 10 + 50}px,0)`;

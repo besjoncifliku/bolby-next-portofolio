@@ -1,7 +1,7 @@
 import React from 'react'
 import ProfileImg from '../../assets/images/user_profile.png';
 import '../../sass/_header.scss';
-import { UserContent } from "./userContent";
+import { UserContent } from "./UserContent";
 import Image from "next/image";
 
 export const UserProfile = ({}) => {

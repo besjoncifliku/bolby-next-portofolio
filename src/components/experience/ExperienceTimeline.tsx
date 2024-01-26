@@ -9,7 +9,7 @@ import {
 } from '@mui/lab';
 import CodeIcon from '@mui/icons-material/Code';
 import WorkIcon from '@mui/icons-material/Work';
-import Experience from "./experienceElement";
+import Experience from "./ExperienceElement";
 
 export default function ExperienceTimeline(props: any) {
     return (

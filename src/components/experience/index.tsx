@@ -1,27 +1,20 @@
 import React,{useState,useEffect} from 'react'
 import '../../sass/_experience.scss';
-import ExperienceTimeline from "./experienceTimeline";
+import ExperienceTimeline from "./ExperienceTimeline";
 
 export const ExperienceView = () => {
     /* Read data from .json file and sent them as props to be displayed in experience section */
-    const [data,setData]=useState([]);
+    const [data,setData] = useState<any[]>([]);
     const getData=()=>{
-        fetch('experience.json'
-            ,{
-                headers : {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
+        fetch('./experience.json',{
+            headers : {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
-        )
-            .then(function(response){
-                console.log(response)
-                return response.json();
-            })
-            .then(function(myJson) {
-                console.log(myJson);
-                setData(myJson)
-            });
+        }).then(async function(response){
+            const data = await response.json();
+            setData(data);
+        });
     }
     useEffect(()=>{
         getData()

@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import '../../sass/_work.scss';
-import { ProjectView } from "./projectView";
+import { ProjectView } from "./ProjectView";
 import { useInView, animated } from '@react-spring/web'
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import { buildInteractionObserverThreshold } from "@/utils/threshold.utils";
@@ -38,7 +38,7 @@ export const WorkView = () => {
     }
 
     const getData = (): void => {
-        fetch('projects.json',{
+        fetch('./projects.json',{
             headers : {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
