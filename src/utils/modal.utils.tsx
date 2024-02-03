@@ -2,14 +2,18 @@ import React, { forwardRef, cloneElement } from 'react';
 import { Modal } from '@mui/material';
 import { animated, useSpring } from '@react-spring/web';
 import {
+    ProjectElementCategory,
     ProjectElementLeftSide,
     ProjectElementModal,
-    ProjectElementRightSide
+    ProjectElementRightSide,
+    ProjectElementTechStack
 } from "@/utils/styledComponents.utils";
 import PropTypes from 'prop-types';
 import { Carousel } from "@/components/carousel";
-import { MetaTab } from "@/components/meta-tab";
+import { ProjectDescription } from "@/components/work/ProjectDescription";
 
+import '../sass/_work.scss';
+import Image from "next/image";
 
 const Fade = forwardRef(function Fade(props: any, ref) {
     const {
@@ -30,7 +34,9 @@ const Fade = forwardRef(function Fade(props: any, ref) {
             opacity: open ? 1 : 0,
             display: 'flex',
             'justify-content': 'center',
-            outline: 'none'
+            outline: 'none',
+            width: '62%',
+            position: 'absolute'
         },
         onStart: () => {
             if (open && onEnter) {
@@ -63,6 +69,8 @@ Fade.propTypes = {
 
 export const SpringModal = (props: any) => {
 
+    const techStack: string[] = props.project.tech?.split(', ') ?? [];
+
     // this will lift the state up to the parent component
     // https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example
     const handleClose = () => {
@@ -87,18 +95,33 @@ export const SpringModal = (props: any) => {
                 <ProjectElementModal>
                     <ProjectElementLeftSide>
                         <p className={'absolute top-0.5 left-1 text-gray-400 text-xs'}>{props.project.date}</p>
-                        <Carousel/>
-                        <a href="#"
-                           className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                            <h2 className={'text-2xl font-bold tracking-tight text-gray-900 dark:text-white'}>{props.project.title}</h2>
-                        </a>
-                        <MetaTab></MetaTab>
-                        <p className={'text-gray-700'}>{props.project.description}</p>
+                        {/*<Carousel/>*/}
+                        <ProjectDescription title={props.project.title} description={props.project.description}></ProjectDescription>
                     </ProjectElementLeftSide>
                     <ProjectElementRightSide>
-                        <div className={'text-gray-950'}>{props.project.category}</div>
-                        <div className={'text-gray-950'}>{props.project.tech}</div>
-                        <a href={'/#'} className={'text-gray-400 text-xs'}>{props.project.link}</a>
+                        <ProjectElementTechStack>
+                            <div className="tools">
+                                <div className="circle">
+                                    <span className="red box"></span>
+                                </div>
+                                <div className="circle">
+                                    <span className="yellow box"></span>
+                                </div>
+                                <div className="circle">
+                                    <span className="green box"></span>
+                                </div>
+                                <div className={'stack-description'}>techStack.tsx</div>
+                            </div>
+                            <p className={'tech-stack-container'}>
+                                {techStack.map((element: string) => (
+                                    <span key={element} className={'tech-stack-badge'}>{element.toLowerCase()}</span>
+                                ))}
+                            </p>
+                            <a href={'/#'} className={'text-gray-400 text-xs p-2'}>{props.project.link}</a>
+                        </ProjectElementTechStack>
+                        <ProjectElementCategory>
+                            {props.project.category}
+                        </ProjectElementCategory>
                     </ProjectElementRightSide>
                 </ProjectElementModal>
             </Fade>

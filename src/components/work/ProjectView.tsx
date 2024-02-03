@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import '../../sass/_work.scss';
 import { ProjectElement } from "./ProjectElement";
 import { useInView, useSpring, animated } from "@react-spring/web";
 import { buildInteractionObserverThreshold } from "@/utils/threshold.utils";
+
+import '../../sass/_work.scss';
 
 export const ProjectView = (props: { projects: any[]; category: any; }) => {
     const projects: any[] = props.projects;

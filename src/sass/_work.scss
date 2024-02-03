@@ -388,3 +388,62 @@
     transform: rotate(360deg);
   }
 }
+
+.tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}
+
+.stack-description {
+  position: absolute;
+  left: 40%;
+  color: #8c8a8a;
+  font-size: 12px;
+}
+
+.tech-stack-container {
+  margin-top: 10%;
+  width: 100%;
+  float: right;
+  height: 130px;
+  padding: 10px;
+}
+
+.tech-stack-badge {
+  padding: 3px 8px 3px 8px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #5E5C7F;
+  margin-right: 10px;
+  font-size: 11px;
+  float: left;
+  margin-bottom: 10px;
+}

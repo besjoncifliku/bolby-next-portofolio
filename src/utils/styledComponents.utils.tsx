@@ -113,10 +113,9 @@ export const ProjectElementModal = styled.div`
     display: flex;
     justify-content: space-between;
     float: right;
-    padding: 42px;
+    padding: 30px;
     background-color: #5E5C7F;
     font-family: sans-serif;
-    width: 62%;
     border-radius: 8px;
     min-height: 65vh;
 `;
@@ -124,8 +123,8 @@ export const ProjectElementModal = styled.div`
 export const ProjectElementRightSide = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    background-color: #fff;
+    justify-content: space-between;
+    background-color: transparent;
     font-family: sans-serif;
     width: 28%;
     border-radius: 10px;
@@ -137,7 +136,7 @@ export const ProjectElementLeftSide = styled.div`
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 30px;
+    padding: 20px;
     background-color: #fff;
     font-family: sans-serif;
     width: 69%;
@@ -159,20 +158,21 @@ export const ProjectElementDetails = styled.div`
 
 export const ProjectElementCategory = styled.div`
     display: flex;
-    justify-content: flex-start;
-    padding: 30px;
-    background-color: #5E5C7F;
+    padding: 10px;
+    background-color: #fff;
     font-family: sans-serif;
-    width: 80%;
     border-radius: 8px;
+    color: #111;
+    min-height: 34%;
 `;
 
 export const ProjectElementTechStack = styled.div`
     display: flex;
-    justify-content: flex-start;
-    padding: 30px;
-    background-color: #5E5C7F;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #fff;
     font-family: sans-serif;
-    width: 80%;
     border-radius: 8px;
+    color: #111;
+    min-height: 60%;
 `;
