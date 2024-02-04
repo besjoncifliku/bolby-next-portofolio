@@ -11,11 +11,11 @@ import {
     ContactSubject,
     ErrorMessage,
     ContactInputBlock
-} from "@/utils/styledComponents.utils";
+} from "@/styled-components/contact.styled";
 import ContactImg from '../../assets/images/contact.svg';
 
 import '../../sass/_work.scss';
-import '../../utils/styledComponents.utils';
+import '../../styled-components/contact.styled';
 
 export const ContactView = () => {
     return (

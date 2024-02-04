@@ -7,7 +7,7 @@ import {
     ProjectElementModal,
     ProjectElementRightSide,
     ProjectElementTechStack
-} from "@/utils/styledComponents.utils";
+} from "@/styled-components/projects.styled";
 import PropTypes from 'prop-types';
 import { Carousel } from "@/components/carousel";
 import { ProjectDescription } from "@/components/work/ProjectDescription";

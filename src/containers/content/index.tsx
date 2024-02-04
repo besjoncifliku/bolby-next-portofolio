@@ -1,11 +1,12 @@
 import React from 'react'
+import { HeaderView } from "@/components/header";
+import { AboutView } from "@/components/about";
+import { WorkView } from "@/components/work";
+import { InterestView } from "@/components/interests";
+import { BlogView } from "@/components/blog";
+import { ContactView } from "@/components/contact";
+import { AnimatedText } from "@/components/animated-text";
 import '../../sass/_style.scss';
-import {HeaderView} from "@/components/header";
-import {AboutView} from "@/components/about";
-import {WorkView} from "@/components/work";
-import {InterestView} from "@/components/interests";
-import {BlogView} from "@/components/blog";
-import {ContactView} from "@/components/contact";
 
 export const Content = () => {
     return (
@@ -15,6 +16,7 @@ export const Content = () => {
                 <AboutView/>
                 <InterestView />
                 <WorkView />
+                <AnimatedText />
                 <BlogView />
                 <ContactView />
             </div>

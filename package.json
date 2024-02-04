@@ -17,6 +17,7 @@
     "@react-spring/web": "^9.7.3",
     "flowbite": "^2.2.1",
     "formik": "^2.4.5",
+    "gsap": "^3.12.5",
     "next": "14.1.0",
     "react": "^18",
     "react-countup": "^6.5.0",

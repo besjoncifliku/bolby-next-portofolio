@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Image from "next/image";
 import testImage from "../../assets/images/test.svg";
+
 export const Carousel = (images: any) => {
     const [activeIndex, setActiveIndex] = useState(0);
 

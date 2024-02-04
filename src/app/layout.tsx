@@ -2,9 +2,10 @@
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { initFlowbite } from "flowbite";
+
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +14,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const [initFlowbiteFlag, setInitFlowbiteFlag] = useState<boolean>(false);
+
   useEffect(() => {
+    if (!initFlowbiteFlag) {
+      setInitFlowbiteFlag(false);
+    }
     initFlowbite();
-  });
+  }, [initFlowbiteFlag]);
 
   return (
     <html lang="en">

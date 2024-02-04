@@ -1,0 +1,53 @@
+.container-animated-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 75px 100px 75px;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.text-animated {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: bold;
+  font-size: 10vw;
+  letter-spacing: -.01em;
+  line-height: 100%;
+  margin: 0;
+  width: 100%;
+  color: rgb(182, 182, 182, 0.2);
+  background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0;
+  transition: background-size cubic-bezier(.1,.5,.5,1) 1.5s;
+  border-bottom: 1px solid #2F2B28;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+
+  span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #353353;
+    color: #0D0D0D;
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+    transform-origin: center;
+    transition: all cubic-bezier(.1,.5,.5,1) 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &:hover > span {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
