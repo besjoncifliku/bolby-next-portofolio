@@ -84,13 +84,15 @@ export const AnimatedText = () => {
         */
     }, []);
 
-    return <div className="container-animated-text">
-        {textElements.map((textElement, index) => (
-                <animated.h1 key={index} className={'text-animated'} ref={refsInView[index]} style={springsInView[index]}>
-                    {textElement.text}
-                    <span>{textElement.hidden}</span>
-                </animated.h1>
-            )
-        )}
-    </div>;
+    return (
+        <div className="container-animated-text">
+            {textElements.map((textElement, index) => (
+                    <animated.h1 key={index} className={'text-animated'} ref={refsInView[index]} style={springsInView[index]}>
+                        {textElement.text}
+                        <span>{textElement.hidden}</span>
+                    </animated.h1>
+                )
+            )}
+        </div>
+    );
 }

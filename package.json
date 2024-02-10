@@ -11,9 +11,9 @@
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.15.5",
-    "@mui/lab": "^5.0.0-alpha.161",
-    "@mui/material": "^5.15.5",
+    "@mui/icons-material": "^5.15.9",
+    "@mui/lab": "^5.0.0-alpha.165",
+    "@mui/material": "^5.15.9",
     "@react-spring/web": "^9.7.3",
     "flowbite": "^2.2.1",
     "formik": "^2.4.5",
@@ -25,18 +25,18 @@
     "sass": "^1.70.0",
     "sharp": "^0.33.2",
     "styled-components": "^6.1.8",
-    "sweetalert2": "^11.10.3",
+    "sweetalert2": "^11.10.5",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "^10.4.17",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
 }

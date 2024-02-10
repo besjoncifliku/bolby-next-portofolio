@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSpring, animated } from  '@react-spring/web'
-import '../../sass/_header.scss';
 import { UserProfile } from "./UserProfile";
+import { SpotifyBadge } from "@/components/spotify-badge";
+import '../../sass/_header.scss';
 
 const calc = (x: number, y: number) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 const trans4 = (x: number, y: number) => `translate3d(${-x / 16 + 55}px,${-y / 10 + 50}px,0)`;
@@ -24,6 +25,7 @@ export const HeaderView = () => {
                 <animated.div className="card9" style={{transform: props.xy.to(trans9)}}/>
                 <animated.div className="card10" style={{transform: props.xy.to(trans10)}}/>
             </div>
+            <SpotifyBadge />
         </div>
     );
 }
