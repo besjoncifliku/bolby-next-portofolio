@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderView } from "@/components/header";
+import { HeroSection } from "@/containers/hero-section";
 import { AboutView } from "@/components/about";
 import { WorkView } from "@/components/work";
 import { InterestView } from "@/components/interests";
@@ -11,7 +11,7 @@ import '../../sass/_style.scss';
 export const Content = () => {
     return (
         <div className="sm:ml-64 content-container">
-            <HeaderView/>
+            <HeroSection />
             <div className="content-container-limited-width">
                 <AboutView/>
                 <InterestView />

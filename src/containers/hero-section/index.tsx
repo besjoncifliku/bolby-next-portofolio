@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSpring, animated } from  '@react-spring/web'
-import { UserProfile } from "./UserProfile";
+import { UserProfile } from "@/components/user-profile";
 import { SpotifyBadge } from "@/components/spotify-badge";
 import '../../sass/_header.scss';
 
@@ -12,7 +12,7 @@ const trans8 = (x: number, y: number) => `translate3d(${-x / 18 - 25}px,${-y / 8
 const trans9 = (x: number, y: number) => `translate3d(${-x / 15 - 25}px,${-y / 10 - 180}px,0)`;
 const trans10 = (x: number, y: number) => `translate3d(${-x / 16 - 45}px,${-y / 14 + 105}px,0)`;
 
-export const HeaderView = () => {
+export const HeroSection = () => {
     const [props, set] = useSpring(() => ({xy: [0, 0], config: {mass: 20, tension: 850, friction: 120}}));
     return (
         <div className="header-container">

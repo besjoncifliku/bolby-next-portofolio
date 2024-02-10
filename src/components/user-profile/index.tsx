@@ -1,7 +1,7 @@
 import React from 'react'
 import ProfileImg from '../../assets/images/user_profile.png';
 import '../../sass/_header.scss';
-import { UserContent } from "./UserContent";
+import { UserContent } from "../user-content";
 import Image from "next/image";
 
 export const UserProfile = ({}) => {
@@ -19,7 +19,7 @@ export const UserProfile = ({}) => {
                     <div className="glitch__layer"></div>
                 </div>
             </div>
-            <UserContent/>
+            <UserContent />
         </div>
     );
 }
