@@ -15,8 +15,8 @@ export const SpotifyBadge = () => {
                     </div>
                 </div>
                 <div className="texts">
-                    <p className="title-1">Software</p>
-                    <p className="title-2">Engineering...</p>
+                    <p className="title-1">Software Engineer</p>
+                    <p className="title-2">Programming...</p>
                 </div>
             </div>
 

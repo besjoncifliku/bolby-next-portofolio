@@ -442,9 +442,9 @@
 .spotify-badge-card {
   position: absolute;
   top: 5%;
-  right: 5%;
-  width: 250px;
-  height: 120px;
+  right: 3%;
+  width: 299px;
+  height: 135px;
   background: #fff;
   border-radius: 10px;
   padding: 10px;
@@ -460,7 +460,7 @@
     position: relative;
     top: 5px;
     left: 5px;
-    height: 40px;
+    height: 50px;
     width: 40px;
     background-color: #d2d2d2;
     border-radius: 5px;
@@ -489,7 +489,7 @@
   border-radius: 3px;
   position: absolute;
   left: 5%;
-  bottom: 22px;
+  bottom: 20px;
 }
 
 .elapsed {
@@ -503,7 +503,7 @@
   color: #191414;
   display: flex;
   position: absolute;
-  bottom: 30px;
+  bottom: 31px;
   left: 0;
   width: 100%;
   justify-content: center;
@@ -526,7 +526,7 @@
 
 .controls svg {
   &:hover {
-    color: #1db954;
+    color: #353353;
   }
 }
 .volume {
@@ -545,7 +545,7 @@
 }
 
 .volume .slider .green {
-  background-color: #1db954;
+  background-color: #353353;
   height: 100%;
   width: 80%;
   border-radius: 3px;
@@ -574,13 +574,13 @@
 }
 
 .time_now {
-  bottom: 11px;
-  left: 10px;
+  bottom: 5px;
+  left: 15px;
 }
 
 .time_full {
-  bottom: 11px;
-  right: 10px;
+  bottom: 5px;
+  right: 15px;
 }
 
 .playing {
@@ -588,14 +588,14 @@
   position: relative;
   justify-content: center;
   gap: 1px;
-  width: 30px;
-  height: 20px;
+  width: 35px;
+  height: 50px;
 }
 
 .greenline {
   background-color: #1db954;
-  height: 20px;
-  width: 2px;
+  height: 51px;
+  width: 10px;
   position: relative;
   transform-origin: bottom;
 }

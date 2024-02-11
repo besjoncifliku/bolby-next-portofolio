@@ -10,10 +10,9 @@ import {
 } from "@/styled-components/projects.styled";
 import PropTypes from 'prop-types';
 import { Carousel } from "@/components/carousel";
-import { ProjectDescription } from "@/components/work/ProjectDescription";
+import { ProjectDescription } from "@/components/project-description";
 
 import '../sass/_work.scss';
-import Image from "next/image";
 
 const Fade = forwardRef(function Fade(props: any, ref) {
     const {
