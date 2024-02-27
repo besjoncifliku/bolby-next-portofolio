@@ -7,6 +7,7 @@ import { BlogView } from "@/components/blog";
 import { ContactView } from "@/components/contact";
 import { AnimatedText } from "@/components/animated-text";
 import '../../sass/_style.scss';
+import {SocialMediaSection} from "@/containers/social-media";
 
 export const Content = () => {
     return (
@@ -16,6 +17,7 @@ export const Content = () => {
                 <AboutView/>
                 <InterestView />
                 <WorkView />
+                <SocialMediaSection />
                 <AnimatedText />
                 <BlogView />
                 <ContactView />

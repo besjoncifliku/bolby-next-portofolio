@@ -2,10 +2,9 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
+import {SocialMediaFeed} from "@/components/social-media-feed";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -14,7 +13,8 @@ interface TabPanelProps {
     value: number;
 }
 
-function TabPanel(props: TabPanelProps) {
+
+const TabPanel = (props: TabPanelProps) => {
     const { children, value, index, ...other } = props;
 
     return (
@@ -27,14 +27,14 @@ function TabPanel(props: TabPanelProps) {
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
+                    {children}
                 </Box>
             )}
         </div>
     );
 }
 
-function a11yProps(index: number) {
+const a11yProps = (index: number) => {
     return {
         id: `full-width-tab-${index}`,
         'aria-controls': `full-width-tabpanel-${index}`,
@@ -42,46 +42,42 @@ function a11yProps(index: number) {
 }
 
 export default function SocialMediaTabs() {
-    const [value, setValue] = React.useState('one');
+    const [openedTab, setOpenedTab] = React.useState<number>(1);
     const theme = useTheme();
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        setValue(newValue);
+    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+        setOpenedTab(newValue);
     };
 
 
     const handleChangeIndex = (index: number) => {
-        setValue(index);
+        setOpenedTab(index);
     };
 
     return (
         <Box sx={{ width: '100%' }}>
             <Tabs
-                value={value}
+                value={openedTab}
                 onChange={handleChange}
                 textColor="secondary"
                 indicatorColor="secondary"
                 centered
                 aria-label="secondary tabs example"
             >
-                <Tab value="one" label="Item One" />
-                <Tab value="two" label="Item Two" />
-                <Tab value="three" label="Item Three" />
+                <Tab value={1} label="Feed" />
+                <Tab value={2} label="About" />
+                <Tab value={3} label="GuestBook" />
             </Tabs>
-            <SwipeableViews
-                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                index={value}
-                onChangeIndex={handleChangeIndex}
-            >
-                <TabPanel value={value} index={0} dir={theme.direction}>
-                    Item One
+            <div>
+                <TabPanel value={openedTab} index={1} dir={theme.direction}>
+                    <SocialMediaFeed />
                 </TabPanel>
-                <TabPanel value={value} index={1} dir={theme.direction}>
-                    Item Two
+                <TabPanel value={openedTab} index={2} dir={theme.direction}>
+                    <p className={'text-black'}>Item 2</p>
                 </TabPanel>
-                <TabPanel value={value} index={2} dir={theme.direction}>
-                    Item Three
+                <TabPanel value={openedTab} index={3} dir={theme.direction}>
+                    <p className={'text-black'}>Item 3</p>
                 </TabPanel>
-            </SwipeableViews>
+            </div>
         </Box>
     );
 }

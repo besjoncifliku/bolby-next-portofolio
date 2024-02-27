@@ -14,7 +14,7 @@ import {
 } from "@/styled-components/contact.styled";
 import ContactImg from '../../assets/images/contact.svg';
 
-import '../../sass/_work.scss';
+import '../../sass/_general.scss';
 import '../../styled-components/contact.styled';
 
 export const ContactView = () => {

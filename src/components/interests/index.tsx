@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../sass/_work.scss';
+import '../../sass/_general.scss';
 import MachineLearning from '../../assets/images/machinelearning.svg';
 import Science from '../../assets/images/datascience.svg';
 import Analytics from '../../assets/images/analytics.svg';

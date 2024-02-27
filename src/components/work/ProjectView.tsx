@@ -3,7 +3,7 @@ import { useInView, useSpring, animated } from "@react-spring/web";
 import { buildInteractionObserverThreshold } from "@/utils/threshold.utils";
 import { SpringModal } from "@/utils/modal.utils";
 
-import '../../sass/_work.scss';
+import '../../sass/_general.scss';
 
 const ProjectElement = (props: any) => {
     const project = props.project;

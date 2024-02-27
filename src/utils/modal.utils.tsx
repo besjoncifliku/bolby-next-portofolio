@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 import { Carousel } from "@/components/carousel";
 import { ProjectDescription } from "@/components/project-description";
 
-import '../sass/_work.scss';
+import '../sass/_general.scss';
 
 const Fade = forwardRef(function Fade(props: any, ref) {
     const {
