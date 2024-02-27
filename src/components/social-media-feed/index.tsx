@@ -19,7 +19,7 @@ const SocialMediaDetails = () => {
         <div className={'flex items-center mb-4'}>
             <Image
                 src={UserProfileImg}
-                className={'social-profile-image border-r-2 w-12'}
+                className={'social-profile-image w-12'}
                 alt={'besjon-cifliku-profile'}
             />
             <div className={'flex justify-between items-center ml-2 w-full'}>
@@ -27,7 +27,7 @@ const SocialMediaDetails = () => {
                     <h3>UserName 🌟</h3>
                     <p className={'text-gray-500'}> &#x2022; date</p>
                 </div>
-                <div className={'bg-gray-400 rounded-b-xl p-1'}>
+                <div className={'bg-gray-300 rounded-3xl p-2 pr-2.5'}>
                     <p><span>🔥</span> Fire Coding</p>
                 </div>
             </div>
@@ -37,7 +37,7 @@ const SocialMediaDetails = () => {
 
 const SocialMediaPost = () => {
     return (
-        <div className={'social-media-post w-4/5'}>
+        <div className={'social-media-post w-11/12'}>
             <div className={'flex justify-end text-gray-500 mb-2'}><PushPinOutlinedIcon /> Pinned</div>
             <SocialMediaDetails/>
             <div className={'pl-8'}>

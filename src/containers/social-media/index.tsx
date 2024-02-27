@@ -10,9 +10,6 @@ export const SocialMediaSection = () => {
         <div className="work">
             <h2 className={'header-title'}>Social Media<span>.</span></h2>
             <div className={'social-media-section'}>
-                <div className={'social-media-hardcover'}>
-                    <p className={'text-white'}>Hello there...</p>
-                </div>
                 <SocialMediaHeader/>
                 <div className={'social-container'}>
                     <SocialMediaTabs/>
