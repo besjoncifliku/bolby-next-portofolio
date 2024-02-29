@@ -26,9 +26,9 @@ export const SocialMediaHeader = () => {
                     <p className={'text-gray-600 text-wrap'}>Software Engineer  |  ML Engineer  |  AI Enthusiast  |  Content Creator  |  IT Security Specialist </p>
                 </div>
                 <div className={'social-media-icons mt-8 flex items-center justify-start'}>
-                    <p><CalendarMonthOutlinedIcon /> Joined on Feb 2024</p>
-                    <p><CakeOutlinedIcon /> 24 y/o</p>
-                    <p><DoneAllIcon /> Open to Work</p>
+                    <p><CalendarMonthOutlinedIcon className={'mr-1'} /> Joined on Feb 2024</p>
+                    <p><CakeOutlinedIcon className={'mr-1'}/> 24 y/o</p>
+                    <p><DoneAllIcon className={'mr-1'}/> Open to Work</p>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import {SocialMediaFeed} from "@/components/social-media-feed";
+import {SocialAboutMeText, SocialMediaFeed} from "@/components/social-media-feed";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -63,19 +63,15 @@ export default function SocialMediaTabs() {
                 centered
                 aria-label="secondary tabs example"
             >
-                <Tab value={1} label="Feed" />
-                <Tab value={2} label="About" />
-                <Tab value={3} label="GuestBook" />
+                <Tab value={1} label="Feed" className={'font-bold'} />
+                <Tab value={2} label="About" className={'font-bold'} />
             </Tabs>
             <div>
                 <TabPanel value={openedTab} index={1} dir={theme.direction}>
                     <SocialMediaFeed />
                 </TabPanel>
                 <TabPanel value={openedTab} index={2} dir={theme.direction}>
-                    <p className={'text-black'}>Item 2</p>
-                </TabPanel>
-                <TabPanel value={openedTab} index={3} dir={theme.direction}>
-                    <p className={'text-black'}>Item 3</p>
+                    <SocialAboutMeText />
                 </TabPanel>
             </div>
         </Box>

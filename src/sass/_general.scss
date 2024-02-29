@@ -453,6 +453,10 @@
 //////////// Social Media  /////////////
 ////////////////////////////////////////
 
+.social-media-container {
+  position: relative;
+}
+
 .social-media-section {
   padding: 10px 170px 40px;
 }
@@ -483,30 +487,27 @@
 .social-media-post {
   position: relative;
   z-index: 1;
-  padding: 1.5rem;
+  padding: 2.2rem 2rem 2rem;
   cursor: pointer;
 
   &:after {
     content: "";
-    width: 90%;
-    height: 90%;
+    width: 91%;
+    height: 97%;
     position: absolute;
     border-radius: 8px;
     right: 0;
     bottom: 0;
     transition: 0.3s ease-in-out;
     z-index: -1;
-    opacity: 0.3;
+    background-color: #353353;
   }
 
   &:hover:after {
-    width: 102%;
-    height: 102%;
+    width: 101%;
+    height: 101%;
     border-radius: 4px;
-    background-color: #282c34;
-    opacity: 0.7;
   }
-
 }
 
 .social-media-icons {
@@ -518,3 +519,8 @@
     align-items: center;
   }
 }
+
+
+////////////////////////////////////////
+///////////// Dino Game  ///////////////
+////////////////////////////////////////
