@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import '../../sass/_general.scss';
-import { ProjectView } from "./ProjectView";
+import { ProjectView } from "@/components/project/ProjectView";
 import { useInView, animated } from '@react-spring/web'
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import { buildInteractionObserverThreshold } from "@/utils/threshold.utils";

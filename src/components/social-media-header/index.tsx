@@ -5,13 +5,14 @@ import Image from "next/image";
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import CakeOutlinedIcon from '@mui/icons-material/CakeOutlined';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
+import {DinoGame} from "@/components/dino-game";
 
 export const SocialMediaHeader = () => {
 
     return (
         <div className={'social-media-header'}>
             <div className={'social-media-hardcover'}>
-                <p className={'text-white'}>Hello there...</p>
+                <DinoGame />
             </div>
             <Image
                 src={UserProfileImg}
@@ -22,7 +23,7 @@ export const SocialMediaHeader = () => {
             <div className={'social-container'}>
                 <div className={'social-profile-details mt-14'}>
                     <h2 className={'text-3xl text-gray-800 font-bold mb-2'}>Besjon Cifliku <span className={'text-3xl text-yellow-400 font-bold'}>⚡</span></h2>
-                    <p className={'text-gray-800 font-bold text-wrap mb-2'}>Programming is like painting, it brings ideas to life with a few lines of code.</p>
+                    <p className={'text-gray-800 font-bold text-wrap mb-2'}>Programming === Painting - Bring ideas to life with a few lines of code.</p>
                     <p className={'text-gray-600 text-wrap'}>Software Engineer  |  ML Engineer  |  AI Enthusiast  |  Content Creator  |  IT Security Specialist </p>
                 </div>
                 <div className={'social-media-icons mt-8 flex items-center justify-start'}>

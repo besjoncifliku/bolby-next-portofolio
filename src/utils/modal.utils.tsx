@@ -10,7 +10,7 @@ import {
 } from "@/styled-components/projects.styled";
 import PropTypes from 'prop-types';
 import { Carousel } from "@/components/carousel";
-import { ProjectDescription } from "@/components/project-description";
+import { ProjectDescription } from "@/components/project/ProjectDescription";
 
 import '../sass/_general.scss';
 

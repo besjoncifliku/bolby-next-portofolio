@@ -1,8 +1,8 @@
 import React from 'react'
 import { HeroSection } from "@/containers/hero-section";
 import { AboutView } from "@/components/about";
-import { WorkView } from "@/components/work";
-import { InterestView } from "@/components/interests";
+import { WorkView } from "../work";
+import { InterestView } from "@/components/interest";
 import { BlogView } from "@/components/blog";
 import { ContactView } from "@/components/contact";
 import { AnimatedText } from "@/components/animated-text";

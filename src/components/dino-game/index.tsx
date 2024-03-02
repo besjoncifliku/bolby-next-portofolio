@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef, useLayoutEffect } from 'react'
+import DinoImg from '../../assets/dino/dino.png';
 import '../../sass/_general.scss';
-import {number} from "prop-types";
 
-export const DinoGame = (muted: boolean) => {
 
+export const DinoGame = () => {
+
+    const muted = false;
     const boardWidth = 600;
     const boardHeight = 350;
     const cactusArray = [];
@@ -87,16 +89,20 @@ export const DinoGame = (muted: boolean) => {
         if (!canvas) {
             return;
         }
-        const context = canvas.getContext('2d');
 
+        const context = canvas.getContext('2d');
         if (!context) {
             return;
         }
 
-        context.clearRect(0, 0, boardWidth, boardHeight)
-        context.fillStyle = '#555555'
+        context.clearRect(0, 0, boardWidth, boardHeight);
+        context.fillStyle = '#555555';
 
         // collideWall()
+        const dinoImg = new Image();
+
+        dinoImg.src = DinoImg.src;
+        context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
 
         // net
         for (let i = 0; i < 350; ++i) {
@@ -104,7 +110,7 @@ export const DinoGame = (muted: boolean) => {
         }
 
         // ball
-        context.fillRect(positionX, positionY, 20, 20)
+        // context.drawImage(positionX, positionY, 20, 20)
 
         // player 1
         // context.fillRect(20, playerY, 20, 60);
@@ -128,10 +134,10 @@ export const DinoGame = (muted: boolean) => {
     }, [gameOver])
 
     return (
-        <div className='container'>
-            <div className='containerCanvas'>
+        <div className='dino-container'>
+            <div className='dino-canvas'>
                 <canvas ref={canvasRef} width={boardWidth} height={boardHeight} />
-                <div className='score left'>{score}</div>
+                <div className='dino-score left'>{score}</div>
             </div>
 
             <div>

@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# Intro
+
+This is my personal website. It's configurable, so feel free to use it, or any parts of it for yourself :)
+
+About
+A self-hosted developer homepage, to showcase your projects, posts, coding stats, and more.
+Data is fetched from external sources
+
 ## Getting Started
 
 First, run the development server:
