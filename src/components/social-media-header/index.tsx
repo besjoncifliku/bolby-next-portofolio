@@ -12,7 +12,8 @@ export const SocialMediaHeader = () => {
     return (
         <div className={'social-media-header'}>
             <div className={'social-media-hardcover'}>
-                <DinoGame />
+                {/*TODO Needs refactor to reduce CPU usage, clear state handling in component unmount */}
+                {/*<DinoGame />*/}
             </div>
             <Image
                 src={UserProfileImg}

@@ -80,8 +80,8 @@ const SocialMediaPost = (post: any) => {
             </div>}
             <SocialMediaDetails {...post} />
             <div className={'pl-14'}>
-                <h2 className={'text-3xl font-bold mb-3'}>{post.title}</h2>
-                <p className={'text-lg mb-2'} dangerouslySetInnerHTML={{ __html: post.description }}></p>
+                <h2 className={'text-2xl font-bold mb-3'}>{post.title}</h2>
+                <p className={'text-sm mb-2'} dangerouslySetInnerHTML={{ __html: post.description }}></p>
                 <Image className={'w-full h-96 mt-3 mb-1 rounded-lg object-cover'} src={post.image} alt={'Image'}/>
                 {post.location ?
                     <p className={'flex items-center text-xs text-gray-400'}>

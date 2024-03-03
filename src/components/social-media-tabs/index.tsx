@@ -48,7 +48,6 @@ export default function SocialMediaTabs() {
         setOpenedTab(newValue);
     };
 
-
     const handleChangeIndex = (index: number) => {
         setOpenedTab(index);
     };

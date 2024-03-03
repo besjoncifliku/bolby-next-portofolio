@@ -455,6 +455,24 @@
 
 .social-media-container {
   position: relative;
+  width: 100%;
+  overflow: hidden;
+  
+  > .hidden-details-gradient {
+    background: linear-gradient(to top, #5E5C7F, rgba(#5E5C7F, 0));
+    height: 150px;
+    width: 100%;
+    z-index: 101;
+    bottom: 2.5rem;
+  }
+
+  > .max-height {
+    max-height: 100% !important;
+  }
+
+  > .min-height {
+    max-height: 1200px !important;
+  }
 }
 
 .social-media-section {

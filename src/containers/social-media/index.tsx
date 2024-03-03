@@ -10,16 +10,15 @@ export const SocialMediaSection = () => {
     return (
         <div className="work social-media-container">
             <h2 className={'header-title'}>Social Media<span>.</span></h2>
-            <div className={`social-media-section overflow-hidden ease-in-out ${showDetail ? 'max-h-full' : 'max-h-80'}`}>
+            <div className={`social-media-section overflow-hidden ease-in-out ${showDetail ? 'max-height' : 'min-height'}`}>
                 <SocialMediaHeader/>
                 <div className={'social-container'}>
                     <SocialMediaTabs/>
                 </div>
             </div>
-            <div className={'w-full h-80 absolute bottom-0'}>
+            <div className={`${!showDetail ? 'hidden-details-gradient' : ''} flex justify-center items-center absolute bottom-14 text-center`}>
                 <a
-                    href={'#'}
-                    className={'text-gray-800 font-bold'}
+                    className={`${showDetail ? 'text-gray-800' : 'text-gray-200'} text-xl font-bold cursor-pointer`}
                     onClick={(e) => {
                         e.preventDefault();
                         setShowDetails(!showDetail);
