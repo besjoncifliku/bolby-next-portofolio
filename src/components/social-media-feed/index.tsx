@@ -9,7 +9,6 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import {SOCIAL_MEDIA_POSTS} from '@/data/SocialMediaPost';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackwardIcon from '@mui/icons-material/ArrowBack';
-
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import {Checkbox} from '@mui/material';
 
@@ -21,22 +20,21 @@ export const SocialAboutMeText = () => {
                 Well, I guess you already know my name now 👀.<br></br> I like to code 💻 and build awesome tools.
             </p>
             <p className={'text-lg mt-4 mb-4'}>I cannot say I am a great designer 🎨
-                as this page is based on designs from other people.
-                I am more focused on efficiency, data handling and accessibility of the systems.
-                However, that is what I like about software development and the open source community.
-                I like to see what UI/UX designers are doing and try to implement them in Javascript, React or Angular code.
+                as this page is based on designs I have seen from other talented people.
+                I am focused on efficiency, data handling and accessibility of the systems.
+                However, this is what I like about software development and the <b>Open-Source</b> community.
                 Everything you can see and imagine, can be built with a few lines of code.
             </p>
             <p className={'text-lg mt-4 mb-4'}>
-                I have studied about Computer Science where I{`'`}ve deepen my knowledge in IT Security, Machine Learning 🤖 and AI.
+                I have studied about Computer Science where I{`'`}ve deepen my knowledge in IT Security, AI & Machine Learning 🤖.
                 Now, I am pursuing a doctorate degree in AI 🦾. My goal is to make AI more accessible,
-                explainable and more trustworthy so everyone can use it without concerns about data privacy.
+                explainable and trustworthy so everyone can use it without concerns about data privacy.
             </p>
             <p className={'text-lg mt-4 mb-4'}>
-                I like public speaking although I am a bit shy. I like team work and can bring many innovative
+                I like public speaking, although I am a bit shy. I like team work and I can bring many innovative
                 ideas to the table. I have an eye-catching about system bugs 🐞.
                 My peers would say that I am too quick with providing creative solution before the deadline in a very good quality.
-                Unfortunately I like the perfection and perfectionism usually kills the good.
+                Unfortunately, I like the perfection and perfectionism usually kills the good.
             </p>
             <p className={'text-lg mt-4 mb-4'}>
                 I believe an important part of engineering is not the code, but the approach you decide to solve the problem.
@@ -45,8 +43,11 @@ export const SocialAboutMeText = () => {
             </p>
             <p className={'text-lg mt-4 mb-4'}>
                 A great engineer should know the trade offs of the system and should be committed to the continuous
-                journey of self-improvement and learning. <br></br>
-                <span className={'italic'}> Feedback is always appreciated. Leave a comment in the Guestbook above.</span>
+                journey of self-improvement and learning. <br></br><br></br>
+                <span className={'italic'}>
+                    Feedback is always appreciated. <br></br>
+                    Leave a comment in the <b>&apos;Guestbook&apos;</b> button above.
+                </span>
             </p>
             <p className={'text-lg mb-6'}>Do not forget to have fun!! 😜</p>
             <p className={'text-lg text-right w-full'}>Made with ❤️ - Besjon</p>

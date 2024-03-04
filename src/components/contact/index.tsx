@@ -24,7 +24,6 @@ export const ContactView = () => {
             <div className="contact-form-container">
                 <div className={'contact-description'}>
                     <h2>Get In Touch!</h2>
-                    {/* eslint-disable-next-line react/no-unescaped-entities */}
                     <p>Filling this form is boring? Then send me an <a href={'#'} className={'link'}>email</a>👋.</p>
                     <Image
                         src={ContactImg}
@@ -52,8 +51,8 @@ export const ContactView = () => {
                         onSubmit={(values, { setSubmitting }) => {
                             setTimeout(() => {
                                 Swal.fire({
-                                    title: 'Message sent successfully!',
-                                    text: `👋 Thanks for the message, I will get back to you soon 😃`,
+                                    title: 'Message Sent',
+                                    text: `Hey👋, thanks for your message!\nI will get back to you soon 😃`,
                                     icon: 'success'
                                 });
                                 setSubmitting(false);

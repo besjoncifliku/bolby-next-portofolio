@@ -5,6 +5,9 @@ import Image from "next/image";
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import CakeOutlinedIcon from '@mui/icons-material/CakeOutlined';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
+import BookIcon from '@mui/icons-material/Book';
+
+// TODO Optimize dino game for production
 import {DinoGame} from "@/components/dino-game";
 
 export const SocialMediaHeader = () => {
@@ -20,12 +23,21 @@ export const SocialMediaHeader = () => {
                 className='social-profile-image'
                 alt='besjon-profile'
             />
-            <a className={'text-black absolute right-14 mt-6'}>Follow more</a>
+            <button className={'text-black absolute right-14 mt-6 flex justify-center guestbook-btn cursor-pointer'}>
+                <div>GuestBook</div>
+                <BookIcon className={'guestbook-icon text-gray-50'} />
+            </button>
             <div className={'social-container'}>
                 <div className={'social-profile-details mt-14'}>
-                    <h2 className={'text-3xl text-gray-800 font-bold mb-2'}>Besjon Cifliku <span className={'text-3xl text-yellow-400 font-bold'}>⚡</span></h2>
-                    <p className={'text-gray-800 font-bold text-wrap mb-2'}>Programming === Painting - Bring ideas to life with a few lines of code.</p>
-                    <p className={'text-gray-600 text-wrap'}>Software Engineer  |  ML Engineer  |  AI Enthusiast  |  Content Creator  |  IT Security Specialist </p>
+                    <h2 className={'text-3xl text-gray-800 font-bold mb-2'}>
+                        Besjon Cifliku <span className={'text-3xl text-yellow-400 font-bold'}>⚡</span>
+                    </h2>
+                    <p className={'text-gray-800 font-bold text-wrap mb-2'}>
+                        Programming === Painting - Bring ideas to life with a few lines of code.
+                    </p>
+                    <p className={'text-gray-600 text-wrap'}>
+                        Software Engineer  |  ML & AI Enthusiast  |  Content Creator  |  IT Security Specialist
+                    </p>
                 </div>
                 <div className={'social-media-icons mt-8 flex items-center justify-start'}>
                     <p><CalendarMonthOutlinedIcon className={'mr-1'} /> Joined on Feb 2024</p>
