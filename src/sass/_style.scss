@@ -114,3 +114,23 @@
 ////////////////////////////////////////
 ///////////////Tools Style//////////////
 ////////////////////////////////////////
+
+.btn-arrow {
+  position: relative;
+
+  > .icon-arrow {
+    position: absolute;
+    width: 1em;
+    right: 0;
+    opacity: 0 !important;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.4s ease-out;
+    will-change: right, opacity;
+  }
+
+  &:hover .icon-arrow {
+    opacity: 1 !important;
+    right: -1.2em;
+  }
+}

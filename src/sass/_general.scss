@@ -461,9 +461,18 @@
   > .hidden-details-gradient {
     background: linear-gradient(to top, #5E5C7F, rgba(#5E5C7F, 0));
     height: 150px;
-    width: 100%;
+    width: 60%;
+    transform: translate(23%);
     z-index: 101;
     bottom: 2.5rem;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  > .hidden-container {
+    margin-left: -100px;
+    margin-top: -100px;
+    z-index: 101;
   }
 
   > .max-height {
@@ -477,6 +486,7 @@
 
 .social-media-section {
   padding: 10px 170px 40px;
+  transition: ease-in-out;
 }
 
 .social-container {
@@ -490,7 +500,7 @@
   > .social-media-hardcover {
     width: 100%;
     height: 220px;
-    background-color: black;
+    background-color: #111;
     border-radius: 10px;
   }
 
@@ -508,14 +518,23 @@
   padding: 2.2rem 2rem 2rem;
   cursor: pointer;
 
+  > .animated-social-card {
+    background: linear-gradient(270deg, #ce68d9, #45c6db, #45db79);
+    background-size: 800% 800%;
+    -webkit-animation: animatedSocialCard 5s ease infinite;
+    -moz-animation: animatedSocialCard 5s ease infinite;
+    animation: animatedSocialCard 5s ease infinite;
+    transition: .6s ease-in-out;
+  }
+
   &:after {
     content: "";
     width: 91%;
-    height: 97%;
+    height: 86%;
     position: absolute;
     border-radius: 8px;
     right: 0;
-    bottom: 0;
+    bottom: 6rem;
     transition: 0.3s ease-in-out;
     z-index: -1;
     background-color: #353353;
@@ -523,8 +542,18 @@
 
   &:hover:after {
     width: 101%;
-    height: 101%;
-    border-radius: 4px;
+    height: 100%;
+    bottom: 0;
+  }
+
+  > .social-post-icons {
+    margin-top: -1em;
+    transition: .3s ease-in-out;
+  }
+
+  &:hover .social-post-icons {
+    opacity: 1;
+    margin-top: 1em;
   }
 }
 
@@ -538,7 +567,115 @@
   }
 }
 
+@keyframes animatedSocialCard {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+////////////////////////////////////////
+///////////// Heart Icon ///////////////
+////////////////////////////////////////
+
+.heart-container {
+  --heart-color: rgb(255, 91, 137);
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transition: .3s;
+}
+
+.heart-container .checkbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.heart-container .svg-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-container .svg-outline,
+.heart-container .svg-filled {
+  fill: var(--heart-color);
+  position: absolute;
+}
+
+.heart-container .svg-filled {
+  animation: keyframes-svg-filled 1s;
+  display: none;
+}
+
+.heart-container .svg-celebrate {
+  position: absolute;
+  animation: keyframes-svg-celebrate .5s;
+  animation-fill-mode: forwards;
+  display: none;
+  stroke: var(--heart-color);
+  fill: var(--heart-color);
+  stroke-width: 2px;
+}
+
+.heart-container .checkbox:checked~.svg-container .svg-filled {
+  display: block
+}
+
+.heart-container .checkbox:checked~.svg-container .svg-celebrate {
+  display: block
+}
+
+@keyframes keyframes-svg-filled {
+  0% {
+    transform: scale(0);
+  }
+
+  25% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(1);
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes keyframes-svg-celebrate {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+    display: none;
+  }
+}
 
 ////////////////////////////////////////
 ///////////// Dino Game  ///////////////
+////////////////////////////////////////
+
+
+////////////////////////////////////////
+////////////// Terminal ////////////////
 ////////////////////////////////////////

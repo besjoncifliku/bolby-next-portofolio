@@ -52,6 +52,8 @@ function Experience(props: any) {
 export const ExperienceView = () => {
     /* Read data from .json file and sent them as props to be displayed in experience section */
     const [data,setData] = useState<any[]>([]);
+
+    // Just for testing purposes I am using an api call instead of static data
     const getData=()=>{
         fetch('./experience.json',{
             headers : {

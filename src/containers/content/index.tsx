@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { HeroSection } from "@/containers/hero-section";
 import { AboutView } from "@/components/about";
 import { WorkView } from "../work";
@@ -7,7 +7,7 @@ import { BlogView } from "@/components/blog";
 import { ContactView } from "@/components/contact";
 import { AnimatedText } from "@/components/animated-text";
 import '../../sass/_style.scss';
-import {SocialMediaSection} from "@/containers/social-media";
+import { SocialMediaSection } from "@/containers/social-media";
 
 export const Content = () => {
     return (
