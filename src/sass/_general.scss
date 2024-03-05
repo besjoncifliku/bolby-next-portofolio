@@ -598,48 +598,43 @@
     font-weight: bold;
     background: var(--color);
     border-radius: 2rem;
-    color: white;
+    color: #fff;
     padding: 1rem;
-  }
 
-  > .guestbook-btn {
-    transform: translateX(-200%);
-    transition: .5s;
-    width: 0;
-    opacity: 0;
-
-    &:active {
-      filter: brightness(1.4);
+    > .guestbook-icon {
+      transform: translateX(-40%);
+      transition: .5s;
+      width: 0;
+      opacity: 0;
     }
   }
 
   &:before {
     content: '';
-    z-index: -1;
     background-color: var(--color);
-    border: 2px solid white;
     border-radius: 2rem;
-    width: 110%;
-    height: 100%;
+    width: 111%;
+    height: 102%;
     position: absolute;
     transform: rotate(10deg);
     transition: .5s;
-    opacity: 0.2;
+    opacity: 0.3;
   }
 
   &:hover {
     filter: brightness(1.2);
-    transform: scale(1.1);
 
     &:before {
       transform: rotate(0deg);
       opacity: 1;
     }
 
-    > .guestbook-btn {
-      width: 25px;
-      transform: translateX(0%);
-      opacity: 1;
+    div {
+      > .guestbook-icon {
+        width: 25px;
+        transform: translateX(0%);
+        opacity: 1;
+      }
     }
   }
 }

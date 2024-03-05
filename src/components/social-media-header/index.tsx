@@ -23,12 +23,14 @@ export const SocialMediaHeader = () => {
                 className='social-profile-image'
                 alt='besjon-profile'
             />
-            <button className={'text-black absolute right-14 mt-6 flex justify-center guestbook-btn cursor-pointer'}>
-                <div>GuestBook</div>
-                <BookIcon className={'guestbook-icon text-gray-50'} />
+            <button className={'absolute right-1 mt-6 flex justify-center guestbook-btn cursor-pointer'}>
+                <div className={'z-10'}>
+                    GuestBook <BookIcon className={'guestbook-icon text-gray-50'} />
+                </div>
+
             </button>
             <div className={'social-container'}>
-                <div className={'social-profile-details mt-14'}>
+                <div className={'social-profile-details mt-16'}>
                     <h2 className={'text-3xl text-gray-800 font-bold mb-2'}>
                         Besjon Cifliku <span className={'text-3xl text-yellow-400 font-bold'}>⚡</span>
                     </h2>
