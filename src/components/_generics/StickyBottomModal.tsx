@@ -11,52 +11,6 @@ type BottomSheetFC = {
     contentContainerChild?: JSX.Element;
 };
 
-const FloatInModal = forwardRef(function Float(props: any, ref) {
-    const {
-        children,
-        in: open,
-        onClick,
-        onEnter,
-        onExited,
-        ownerState,
-        ...other
-    } = props;
-
-    const style = useSpring({
-        from: {
-            transform: 'none'
-        },
-        to: {
-            transform: open ? 'translateY(-10rem)' : 'none',
-        },
-        onStart: () => {
-            if (open && onEnter) {
-                onEnter(null as any, true);
-            }
-        },
-        onRest: () => {
-            if (!open && onExited) {
-                onExited(null as any, true);
-            }
-        }
-    });
-
-    return (
-        <animated.div ref={ref} style={style} {...other}>
-            { cloneElement(children, { onClick }) }
-        </animated.div>
-    );
-});
-
-FloatInModal.propTypes = {
-    children: PropTypes.element,
-    in: PropTypes.bool.isRequired,
-    onEnter: PropTypes.func,
-    onExited: PropTypes.func,
-    onClick: PropTypes.any,
-    ownerState: PropTypes.any
-};
-
 /**
  * Based on React Use Gesture package - add a bottom sheet with option to extend
  * @param openModal
@@ -74,7 +28,7 @@ export const BottomSheetModal = ({ openModal, closeModal, contentContainerChild 
     const open = ({ canceled }: any) => {
         // when cancel is true, it means that the user passed the upwards threshold,
         // so we change the spring config to create a nice wobbly effect
-        api.start({ y: 450, immediate: false, config: canceled ? config.wobbly : config.stiff });
+        api.start({ y: 150, immediate: false, config: canceled ? config.wobbly : config.stiff });
     }
 
     const close = (velocity = 0) => {
@@ -153,15 +107,13 @@ export const BottomSheetModal = ({ openModal, closeModal, contentContainerChild 
                 onClick={handleClose}
                 onScroll={disableScrollOnBackdrop}
             >
-                <FloatInModal in={openModal} >
-                    <a.div className={'sticky-bottom-sheet'} style={{display, bottom: `calc(-100vh + ${maxHeight - 300}px)`, y}}  ref={dragRef} >
-                        <div className={'grab-cursor text-gray-800'} { ...bind() } >Drag Me</div>
-                        <div className={'text-gray-800 h-28'}>
-                            Container
-                            {contentContainerChild ? contentContainerChild : <></>}
-                        </div>
-                    </a.div>
-                </FloatInModal>
+                <a.div className={'sticky-bottom-sheet'} style={{display, bottom: `calc(-100vh + ${maxHeight - 300}px)`, y}}  ref={dragRef} >
+                    <div className={'grab-cursor text-gray-800'} { ...bind() } >Drag Me</div>
+                    <div className={'text-gray-800 h-28'}>
+                        Container
+                        { contentContainerChild ? cloneElement(contentContainerChild) : <></> }
+                    </div>
+                </a.div>
             </Backdrop>
         </div>
     )

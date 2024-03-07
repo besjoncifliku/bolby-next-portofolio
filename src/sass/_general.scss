@@ -745,10 +745,10 @@
 ////////////////////////////////////////
 
 .sticky-bottom-sheet {
-  z-index: 9999;
+  z-index: 999;
   position: fixed;
-  left: 2vw;
-  height: calc(100vh + 600px);
+  transform: translateX(50%);
+  height: calc(100vh + 690px);
   width: 66vw;
   border-radius: 12px 12px 0px;
   background: #fff;
@@ -756,11 +756,10 @@
 
   > div {
     height: 60px;
-    border-bottom: 1px solid #eee;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    text-transform: capitalize;
+    overflow: scroll;
   }
 }
