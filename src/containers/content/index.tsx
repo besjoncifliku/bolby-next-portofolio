@@ -8,6 +8,7 @@ import { ContactView } from "@/components/contact";
 import { AnimatedText } from "@/components/animated-text";
 import '../../sass/_style.scss';
 import { SocialMediaSection } from "@/containers/social-media";
+import {GuestBook} from "@/components/guestbook";
 
 export const Content = () => {
     return (
@@ -20,6 +21,7 @@ export const Content = () => {
                 <SocialMediaSection />
                 <AnimatedText />
                 <BlogView />
+                <GuestBook openBook={true} closeGuestBook={(state: boolean) => {console.log(state)}}/>
                 <ContactView />
             </div>
         </div>

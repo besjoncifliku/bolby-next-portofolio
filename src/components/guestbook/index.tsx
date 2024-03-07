@@ -1,73 +1,84 @@
-import React from 'react'
-import { useDrag } from '@use-gesture/react'
-import { a, useSpring, config } from '@react-spring/web'
+import React, { useEffect, useState } from 'react';
+import { useDrag } from '@use-gesture/react';
+import { a, useSpring, config } from '@react-spring/web';
+import type { JSX } from 'react';
+import Backdrop from '@mui/material/Backdrop';
+import styles from './styles.module.css';
 
-import styles from './styles.module.css'
+type GuestBookFC = {
+    openBook: boolean;
+    closeGuestBook: (newState: boolean) => void;
+    children?: any
+};
 
-const items = ['save item', 'open item', 'share item', 'delete item', 'cancel']
-const height = items.length * 60 + 80
+/**
+ * Based on React Use Gesture package - add a bottom sheet with option to extend
+ * @param openBook
+ * @param closeGuestBook
+ * @constructor
+ */
+export const GuestBook = ({openBook, closeGuestBook}: GuestBookFC): JSX.Element => {
+    // Maximum height in addition to the height provided in the styles
+    const maxHeight = 330;
 
-export const GuestBook = () => {
-    const [{ y }, api] = useSpring(() => ({ y: height }))
+    const [{ y }, api] = useSpring(() => ({ y: maxHeight }));
 
-    // @ts-ignore
+    const [heightX, setHeight] = useState<number>(maxHeight);
+
     const open = ({ canceled }: any) => {
-        // when cancel is true, it means that the user passed the upwards threshold
+        // when cancel is true, it means that the user passed the upwards threshold,
         // so we change the spring config to create a nice wobbly effect
-        api.start({ y: 0, immediate: false, config: canceled ? config.wobbly : config.stiff })
+        api.start({ y: 450, immediate: false, config: canceled ? config.wobbly : config.stiff });
     }
+
     const close = (velocity = 0) => {
-        api.start({ y: height, immediate: false, config: { ...config.stiff, velocity } })
+        api.start({ y: maxHeight, immediate: false, config: { ...config.stiff, velocity } });
     }
 
     const bind = useDrag(
         ({ last, velocity: [, vy], direction: [, dy], offset: [, oy], cancel, canceled }) => {
-            // if the user drags up passed a threshold, then we cancel
-            // the drag so that the sheet resets to its open position
-            if (oy < -70) cancel()
+            // cancel and resets to open position
+            if (oy < -50) cancel();
 
             // when the user releases the sheet, we check whether it passed
             // the threshold for it to close, or if we reset it to its open positino
             if (last) {
-                oy > height * 0.5 || (vy > 0.5 && dy > 0) ? close(vy) : open({ canceled })
+                oy > maxHeight * 0.5 || (vy > 0.5 && dy > 0) ? close(vy) : open({ canceled });
             }
-                // when the user keeps dragging, we just move the sheet according to
+            // when the user keeps dragging, we just move the sheet according to
             // the cursor position
-            else api.start({ y: oy, immediate: true })
+            // api.start({ y: oy, immediate: true });
+            api.start({ y: oy, immediate: false, config: { ...config.stiff} });
+
         },
         { from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true }
-    )
+    );
 
-    const display = y.to((py) => (py < height ? 'block' : 'none'))
-
-    const bgStyle = {
-        transform: y.to([0, height], ['translateY(-8%) scale(1.16)', 'translateY(0px) scale(1.05)']),
-        opacity: y.to([0, height], [0.4, 1], 'clamp')
+    const disableScrollOnBackdrop = (event: React.TouchEvent<HTMLElement>) => {
+        event.preventDefault();
     }
-    // @ts-ignore
+
+    const handleClose = () => {
+        closeGuestBook(false);
+    };
+
+    const display = y.to((py) => (py < maxHeight ? 'block' : 'none'))
+
     return (
         <div className="flex" style={{ overflow: 'hidden' }}>
-            <a.div className={styles.bg} onClick={() => close()} style={bgStyle}>
-                <img
-                    src="https://images.pexels.com/photos/1239387/pexels-photo-1239387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt=""
-                />
-                <img
-                    src="https://images.pexels.com/photos/5181179/pexels-photo-5181179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt=""
-                />
-            </a.div>
             <div className={styles.actionBtn} onClick={(e) => open(e)} />
-            <a.div className={styles.sheet} {...bind()} style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}>
-                {items.map((entry, i) => (
-                    <div
-                        key={entry}
-                        onClick={() => (i < items.length - 1 ? alert('clicked on ' + entry) : close())}
-                    >
-                        {entry}
-                    </div>
-                ))}
-            </a.div>
+            <Backdrop
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                open={openBook}
+                onClick={handleClose}
+                onScroll={disableScrollOnBackdrop}
+            >
+                <a.div className={styles.sheet} style={{display, bottom: `calc(-100vh + ${maxHeight - 600}px)`, y}}>
+                    <div className={'grab-cursor text-gray-800'} {...bind()} >Drag Me</div>
+                    <div className={'text-gray-800 h-28'}>Container</div>
+                </a.div>
+            </Backdrop>
+
         </div>
     )
 }
