@@ -21,7 +21,7 @@ export const Content = () => {
                 <SocialMediaSection />
                 <AnimatedText />
                 <BlogView />
-                <GuestBook openBook={true} closeGuestBook={(state: boolean) => {console.log(state)}}/>
+                <GuestBook />
                 <ContactView />
             </div>
         </div>

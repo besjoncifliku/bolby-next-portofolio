@@ -3,7 +3,7 @@ import '../../sass/_animated.scss';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useInView, animated } from '@react-spring/web'
-import {buildInteractionObserverThreshold} from "@/utils/threshold.utils";
+import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
 
 gsap.registerPlugin(ScrollTrigger);
 

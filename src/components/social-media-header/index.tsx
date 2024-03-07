@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../sass/_general.scss';
 import UserProfileImg from "@/assets/images/about_user_profile.png";
 import Image from "next/image";
@@ -9,8 +9,17 @@ import BookIcon from '@mui/icons-material/Book';
 
 // TODO Optimize dino game for production
 import {DinoGame} from "@/components/dino-game";
+import {boolean} from "property-information/lib/util/types";
+import {BottomSheetModal} from "@/components/_generics/StickyBottomModal";
+import {GuestBook} from "@/components/guestbook";
 
 export const SocialMediaHeader = () => {
+
+    const [openGuestBook, setOpenGuestBook] = useState<boolean>(false);
+
+    const handleCloseGuestBook = () => {
+        setOpenGuestBook(false);
+    }
 
     return (
         <div className={'social-media-header'}>
@@ -23,11 +32,13 @@ export const SocialMediaHeader = () => {
                 className='social-profile-image'
                 alt='besjon-profile'
             />
-            <button className={'absolute right-1 mt-6 flex justify-center guestbook-btn cursor-pointer'}>
+            <button
+                className={'absolute right-1 mt-6 flex justify-center guestbook-btn cursor-pointer'}
+                onClick={() => setOpenGuestBook(true)}
+            >
                 <div className={'z-10'}>
                     GuestBook <BookIcon className={'guestbook-icon text-gray-50'} />
                 </div>
-
             </button>
             <div className={'social-container'}>
                 <div className={'social-profile-details mt-16'}>
@@ -46,6 +57,13 @@ export const SocialMediaHeader = () => {
                     <p><CakeOutlinedIcon className={'mr-1'}/> 24 y/o</p>
                     <p><DoneAllIcon className={'mr-1'}/> Open to Work</p>
                 </div>
+            </div>
+            <div className={'guestbook-list'}>
+                <BottomSheetModal
+                    openModal={openGuestBook}
+                    closeModal={handleCloseGuestBook}
+                    contentContainerChild={<GuestBook />}
+                />
             </div>
         </div>
     );

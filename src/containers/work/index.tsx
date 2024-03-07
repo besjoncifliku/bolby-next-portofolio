@@ -3,13 +3,14 @@ import '../../sass/_general.scss';
 import { ProjectView } from "@/components/project/ProjectView";
 import { useInView, animated } from '@react-spring/web'
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
-import { buildInteractionObserverThreshold } from "@/utils/threshold.utils";
+import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
 
 export const WorkView = () => {
     const [filter, setFilter] = useState('all');
     const [allProjects, setAllProjects] = useState<any[]>([]);
     const [projects, setProjects] = useState<any[]>([]);
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState<string>('');
+
     const filtersProject: {[key: string]: string} = {
         'all': 'See All',
         'javascript': 'Javascript',

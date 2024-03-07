@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useInView, useSpring, animated } from "@react-spring/web";
-import { buildInteractionObserverThreshold } from "@/utils/threshold.utils";
-import { SpringModal } from "@/utils/modal.utils";
+import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
+import { CenteredModal } from "@/components/_generics/CenteredModal";
 
 import '../../sass/_general.scss';
+import {ProjectModal} from "@/components/project/ProjectModal";
 
 const ProjectElement = (props: any) => {
     const project = props.project;
@@ -35,7 +36,14 @@ const ProjectElement = (props: any) => {
                     <span>{project.category[1]}, {project.category[2]}</span>
                 </div>
             </div>
-            {open && <SpringModal key={project.title} project={project} open={open} onUpdateModal={handleUpdateState}/>}
+            {open &&
+                <CenteredModal
+                    key={project.title}
+                    openModal={open}
+                    closeModal={handleUpdateState}
+                    contentContainerChild={ <ProjectModal {...project} /> }
+                />
+            }
         </>
     );
 }
@@ -49,7 +57,7 @@ export const ProjectView = (props: { projects: any[]; category: any; }) => {
     const [displayPosts, setDisplayPosts] = useState<boolean>(true);
     const [next, setNext] = useState(3);
 
-    const loopWithSlice = (start: number, end: number) => {
+    const loopWithSlice = (start: number, end: number): void => {
         const slicedPosts: any[] = projects.slice(start, end);
         postProjects = [...postProjects, ...slicedPosts];
         setPostsToShow(postProjects);

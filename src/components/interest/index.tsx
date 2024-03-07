@@ -4,7 +4,7 @@ import MachineLearning from '../../assets/images/machinelearning.svg';
 import Science from '../../assets/images/datascience.svg';
 import Analytics from '../../assets/images/analytics.svg';
 import { useInView, animated } from '@react-spring/web'
-import { buildInteractionObserverThreshold } from "@/utils/threshold.utils";
+import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
 import Image from "next/image";
 
 const InterestElement = (props: { interestTitle: any; interestDescription: any; position: any; interestImagePath: any; }) => {

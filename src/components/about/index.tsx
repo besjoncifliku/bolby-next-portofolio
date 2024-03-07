@@ -6,7 +6,7 @@ import { AboutText } from "./AboutText";
 import UserProfileImg from '../../assets/images/about_user_profile.png';
 import CoffeeIcon from '@mui/icons-material/Coffee';
 import { useInView, animated } from '@react-spring/web'
-import { buildInteractionObserverThreshold } from "@/utils/threshold.utils";
+import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
 
 export const AboutView = () => {
 
