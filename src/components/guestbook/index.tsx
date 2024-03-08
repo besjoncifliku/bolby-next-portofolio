@@ -1,14 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import type { JSX } from 'react';
 import { ExpandibleForm } from '../_generics/ExpandibleForm';
+import { GuestReviewForm } from './GuestReviewForm';
+import Image from "next/image";
 
 type GuestBookFC = {
     guestsReviews: any;
     children?: any
 };
 
-const GuestReviewElement = () => {
-    return (<></>);
+const GuestReviewElement = (guestDetails: any) => {
+    return (
+        <div className={'flex items-start bottom-1 mb-4'}>
+            <Image src={'# w-8 h-8'} alt={'Avatar Image'} />
+            <div className={'flex flex-col items-center justify-between'}>
+                <h2 className={'text-gray-800 text-2xl'}>{guestDetails.name}</h2>
+                <p className={'text-gray-800 text-lg'}>{guestDetails.message}</p>
+            </div>
+        </div>
+    );
 }
 
 /**
@@ -17,7 +27,13 @@ const GuestReviewElement = () => {
  * @constructor
  */
 const GuestBookList = ({guestsReviews}: GuestBookFC) => {
-    return (<></>);
+    return (
+        <div className={'block'}>
+            {guestsReviews.map((review: any) => (
+                <GuestReviewElement key={review.id} {...review} />
+            ))}
+        </div>
+    );
 }
 
 /**
@@ -27,10 +43,10 @@ export const GuestBook = (): JSX.Element => {
     const [guestReviews, setGuestReviews] = useState<any>([]);
 
     return (
-        <div className="flex" style={{ overflow: 'hidden' }}>
+        <div className="flex flex-col" style={{ overflow: 'hidden' }}>
             <h2>This are my reviewers </h2>
             <p>Add your comment here so I can post it. Thank you for your feedback!</p>
-            <ExpandibleForm  formControls={[]}/>
+            <ExpandibleForm  formControls={<GuestReviewForm />} />
             <GuestBookList guestsReviews={guestReviews} />
         </div>
     )

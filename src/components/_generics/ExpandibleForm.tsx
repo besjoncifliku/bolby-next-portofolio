@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useDrag } from '@use-gesture/react';
-import { a, useSpring, config } from '@react-spring/web';
-import type { JSX } from 'react';
-import Backdrop from '@mui/material/Backdrop';
-import styles from './styles.module.css';
+import React, { cloneElement, type JSX } from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 type ExpandibleFormFC = {
     formControls: any;
-    children?: any
 };
 
 /**
@@ -18,7 +16,18 @@ type ExpandibleFormFC = {
 export const ExpandibleForm = ({ formControls }: ExpandibleFormFC): JSX.Element => {
     return (
         <div className="flex" style={{ overflow: 'hidden' }}>
-            <h2>This is a form</h2>
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={ <ExpandMoreIcon /> }
+                    aria-controls="panel1-content"
+                    id="panel1-header"
+                >
+                    GuestBook Form
+                </AccordionSummary>
+                <AccordionDetails>
+                    { cloneElement(formControls) }
+                </AccordionDetails>
+            </Accordion>
         </div>
     )
 }
