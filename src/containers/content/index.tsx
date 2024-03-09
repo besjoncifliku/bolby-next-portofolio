@@ -9,6 +9,8 @@ import { AnimatedText } from "@/components/animated-text";
 import '../../sass/_style.scss';
 import { SocialMediaSection } from "@/containers/social-media";
 import {GuestBook} from "@/components/guestbook";
+import {GuestReviewForm} from "@/components/guestbook/GuestReviewForm";
+import {ExpandibleForm} from "@/components/_generics/ExpandibleForm";
 
 export const Content = () => {
     return (
@@ -21,7 +23,6 @@ export const Content = () => {
                 <SocialMediaSection />
                 <AnimatedText />
                 <BlogView />
-                <GuestBook />
                 <ContactView />
             </div>
         </div>

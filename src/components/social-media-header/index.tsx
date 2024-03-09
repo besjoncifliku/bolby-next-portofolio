@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import '../../sass/_general.scss';
+import { BottomSheetModal } from "@/components/_generics/StickyBottomModal";
+import { GuestBook } from "@/components/guestbook";
 import UserProfileImg from "@/assets/images/about_user_profile.png";
 import Image from "next/image";
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
@@ -10,8 +11,7 @@ import BookIcon from '@mui/icons-material/Book';
 // TODO Optimize dino game for production
 import {DinoGame} from "@/components/dino-game";
 import {boolean} from "property-information/lib/util/types";
-import {BottomSheetModal} from "@/components/_generics/StickyBottomModal";
-import {GuestBook} from "@/components/guestbook";
+
 
 export const SocialMediaHeader = () => {
 

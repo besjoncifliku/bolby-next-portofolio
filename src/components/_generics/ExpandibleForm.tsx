@@ -15,17 +15,22 @@ type ExpandibleFormFC = {
  */
 export const ExpandibleForm = ({ formControls }: ExpandibleFormFC): JSX.Element => {
     return (
-        <div className="flex" style={{ overflow: 'hidden' }}>
+        <div>
             <Accordion>
                 <AccordionSummary
                     expandIcon={ <ExpandMoreIcon /> }
-                    aria-controls="panel1-content"
-                    id="panel1-header"
+                    aria-controls="expandible-forms"
                 >
                     GuestBook Form
                 </AccordionSummary>
                 <AccordionDetails>
-                    { cloneElement(formControls) }
+                    <div className={'text-gray-800'}>
+                        Test me
+                    </div>
+                    { formControls
+                        ? cloneElement(formControls)
+                        : <p className={'text-gray-800 text-sm text-center'}>Sorry, cannot load the form!</p>
+                    }
                 </AccordionDetails>
             </Accordion>
         </div>

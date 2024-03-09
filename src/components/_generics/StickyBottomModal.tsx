@@ -109,7 +109,7 @@ export const BottomSheetModal = ({ openModal, closeModal, contentContainerChild 
             >
                 <a.div className={'sticky-bottom-sheet'} style={{display, bottom: `calc(-100vh + ${maxHeight - 300}px)`, y}}  ref={dragRef} >
                     <div className={'grab-cursor text-gray-800'} { ...bind() } >Drag Me</div>
-                    <div className={'text-gray-800 h-28'}>
+                    <div className={'text-gray-800 flex flex-col h-full'}>
                         Container
                         { contentContainerChild ? cloneElement(contentContainerChild) : <></> }
                     </div>
