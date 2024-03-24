@@ -1,4 +1,4 @@
-import React, { cloneElement, type JSX } from 'react';
+import React, {cloneElement, type JSX, useEffect, useRef} from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -14,12 +14,36 @@ type ExpandibleFormFC = {
  * @constructor
  */
 export const ExpandibleForm = ({ formControls }: ExpandibleFormFC): JSX.Element => {
+    const expandRef = useRef<HTMLDivElement>(null);
+    const [expand, setExpand] = React.useState(false);
+
+    const handleClick = () => {
+        console.log('hello');
+        setExpand((prev) => !prev);
+    }
+
+    useEffect(() => {
+        if (!expandRef.current) {
+            return;
+        }
+        expandRef.current.addEventListener('click', handleClick);
+
+        return () => {
+            if (!expandRef.current) {
+                return;
+            }
+            expandRef.current.removeEventListener('click', handleClick);
+        };
+    }, []);
+
     return (
         <div>
-            <Accordion>
+            <p>Test:</p>
+            <Accordion expanded={expand} >
                 <AccordionSummary
                     expandIcon={ <ExpandMoreIcon /> }
                     aria-controls="expandible-forms"
+                    ref={expandRef}
                 >
                     GuestBook Form
                 </AccordionSummary>

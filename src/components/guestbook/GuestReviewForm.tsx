@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
     GuestDetailBox,
     GuestForm,
@@ -10,8 +10,28 @@ import {
     ErrorMessage
 } from "@/styled-components/contact.styled";
 import { Formik } from "formik";
+import { useFocus } from "@/hooks/useFocus";
 
 export const GuestReviewForm = ({}) => {
+    const [nameRefFocus, sateNameRefFocus] = useFocus()
+    const [messageRefFocus, sateMessageRefFocus] = useFocus()
+    const [linkRefFocus, sateLinkRefFocus] = useFocus()
+
+
+    useEffect(() => {
+        if (!nameRefFocus.current) {
+            return;
+        }
+        nameRefFocus.current.addEventListener('click', sateNameRefFocus);
+
+        return () => {
+            if (!nameRef.current || !messageRef.current || !linkRef.current) {
+                return;
+            }
+            nameRef.current.removeEventListener('click', handleClick);
+        };
+    }, []);
+
     return (
         <div>
             <Formik

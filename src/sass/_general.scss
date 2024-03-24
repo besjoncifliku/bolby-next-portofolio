@@ -753,13 +753,4 @@
   border-radius: 12px 12px 0px;
   background: #fff;
   touch-action: none;
-
-  > div {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-    overflow: scroll;
-  }
 }
