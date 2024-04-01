@@ -19,17 +19,10 @@ export const GuestReviewForm = ({}) => {
 
 
     useEffect(() => {
-        if (!nameRefFocus.current) {
+        if (!nameRefFocus || !messageRefFocus || !linkRefFocus) {
             return;
         }
-        nameRefFocus.current.addEventListener('click', sateNameRefFocus);
-
-        return () => {
-            if (!nameRef.current || !messageRef.current || !linkRef.current) {
-                return;
-            }
-            nameRef.current.removeEventListener('click', handleClick);
-        };
+        // nameRef.current.removeEventListener('click', handleClick);
     }, []);
 
     return (

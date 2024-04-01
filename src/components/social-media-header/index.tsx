@@ -10,8 +10,6 @@ import BookIcon from '@mui/icons-material/Book';
 
 // TODO Optimize dino game for production
 import {DinoGame} from "@/components/dino-game";
-import {boolean} from "property-information/lib/util/types";
-
 
 export const SocialMediaHeader = () => {
 

@@ -44,8 +44,7 @@ export const GuestBook = (): JSX.Element => {
 
     return (
         <div className="flex flex-col">
-            <h2>This are my reviewers </h2>
-            <p>Add your comment here so I can post it. Thank you for your feedback!</p>
+            <p>Add your comment here and I will post it later. Thanks a lot for your feedback!</p>
             <ExpandibleForm  formControls={<GuestReviewForm />} />
             <GuestBookList guestsReviews={guestReviews} />
         </div>

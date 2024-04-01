@@ -3,7 +3,6 @@ import styled from 'styled-components';
 // Contact Forms, inputs, buttons
 export const GuestForm = styled.form`
   width: 300px;
-  display: flex;
   flex-direction: column;
   align-items: center;
 `;
@@ -12,7 +11,7 @@ export const GuestDetailBox = styled.input`
     width: 650px;
     height: 60px;
     border: 0;
-    border-radius: 30px;
+    border-radius: 15px;
     background-color: #fff;
     font-size: 16px;
     font-weight: 400;
@@ -24,7 +23,7 @@ export const GuestDetailBox = styled.input`
     box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
     outline: none;
     font-style: inherit;
-
+    margin-bottom: 10px;
     &:focus {
         ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: #5E5C7F;
@@ -47,7 +46,7 @@ export const GuestMessage = styled.textarea`
   border: 0;
   padding: 20px;
   font-family: inherit;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: #fff;
   font-size: 16px;
   font-weight: 400;

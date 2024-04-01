@@ -44,13 +44,11 @@ export const ExpandibleForm = ({ formControls }: ExpandibleFormFC): JSX.Element 
                     expandIcon={ <ExpandMoreIcon /> }
                     aria-controls="expandible-forms"
                     ref={expandRef}
+                    className={'font-bold rounded-xl'}
                 >
                     GuestBook Form
                 </AccordionSummary>
                 <AccordionDetails>
-                    <div className={'text-gray-800'}>
-                        Test me
-                    </div>
                     { formControls
                         ? cloneElement(formControls)
                         : <p className={'text-gray-800 text-sm text-center'}>Sorry, cannot load the form!</p>

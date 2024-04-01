@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import '../../sass/_general.scss';
 import UserProfileImg from '@/assets/images/about_user_profile.png';
 import Image from 'next/image';
