@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useInView, useSpring, animated } from "@react-spring/web";
 import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
 import { CenteredModal } from "@/components/_generics/CenteredModal";
+import { useMediaQuery } from '@mui/material';
 
 import '../../sass/_general.scss';
 import {ProjectModal} from "@/components/project/ProjectModal";
@@ -9,6 +10,7 @@ import {ProjectModal} from "@/components/project/ProjectModal";
 const ProjectElement = (props: any) => {
     const project = props.project;
     const [open, setOpen] = useState(false);
+    const style = props.style;
 
     const handleUpdateState = (newState: boolean) => {
         setOpen(newState);
@@ -20,7 +22,7 @@ const ProjectElement = (props: any) => {
 
     return (
         <>
-            <div className="project-element rounded shadow-dark padding-30" onClick={handleOpen}>
+            <div className="project-element rounded shadow-dark padding-30" style={style} onClick={handleOpen}>
                 <div className={'project-image'}>
                     <h2>{project.title}</h2>
                 </div>
@@ -49,8 +51,9 @@ const ProjectElement = (props: any) => {
 }
 
 export const ProjectView = (props: { projects: any[]; category: any; }) => {
+    const isMobile = useMediaQuery('(max-width: 599px)');
     const projects: any[] = props.projects;
-    const postsPerPage: number = 6;
+    const postsPerPage: number = isMobile ? 3 : 6;
     let postProjects: any = [];
 
     const [postsToShow, setPostsToShow] = useState<any[]>([]);
@@ -102,7 +105,7 @@ export const ProjectView = (props: { projects: any[]; category: any; }) => {
                 {
                     displayPosts
                         ? postsToShow.map(item =>
-                            <ProjectElement key={`projects.${item.title}`} project={item}/>)
+                            <ProjectElement key={`projects.${item.title}`} project={item} style={isMobile ? {width: "90%", margin: "15px auto"} : {}}/>)
                         : <h2 className={'text-gray-400 text-xl text-center mb-9 mt-8'}>Sorry, no projects were found. Search something else...</h2>
                 }
             </animated.div>

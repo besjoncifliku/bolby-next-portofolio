@@ -448,6 +448,10 @@
   margin-bottom: 10px;
 }
 
+#simple-search {
+  padding-left: 35px;
+}
+
 
 ////////////////////////////////////////
 //////////// Social Media  /////////////
@@ -512,50 +516,50 @@
   }
 }
 
-.social-media-post {
-  position: relative;
-  z-index: 1;
-  padding: 2.2rem 2rem 2rem;
-  cursor: pointer;
+// .social-media-post {
+//   position: relative;
+//   z-index: 1;
+//   padding: 2.2rem 2rem 2rem;
+//   cursor: pointer;
 
-  > .animated-social-card {
-    background: linear-gradient(270deg, #ce68d9, #45c6db, #45db79);
-    background-size: 800% 800%;
-    -webkit-animation: animatedSocialCard 5s ease infinite;
-    -moz-animation: animatedSocialCard 5s ease infinite;
-    animation: animatedSocialCard 5s ease infinite;
-    transition: .6s ease-in-out;
-  }
+//   > .animated-social-card {
+//     background: linear-gradient(270deg, #ce68d9, #45c6db, #45db79);
+//     background-size: 800% 800%;
+//     -webkit-animation: animatedSocialCard 5s ease infinite;
+//     -moz-animation: animatedSocialCard 5s ease infinite;
+//     animation: animatedSocialCard 5s ease infinite;
+//     transition: .6s ease-in-out;
+//   }
 
-  &:after {
-    content: "";
-    width: 91%;
-    height: 86%;
-    position: absolute;
-    border-radius: 8px;
-    right: 0;
-    bottom: 6rem;
-    transition: 0.3s ease-in-out;
-    z-index: -1;
-    background-color: #353353;
-  }
+//   &:after {
+//     content: "";
+//     width: 91%;
+//     height: 86%;
+//     position: absolute;
+//     border-radius: 8px;
+//     right: 0;
+//     bottom: 6rem;
+//     transition: 0.3s ease-in-out;
+//     z-index: -1;
+//     background-color: #353353;
+//   }
 
-  &:hover:after {
-    width: 101%;
-    height: 100%;
-    bottom: 0;
-  }
+//   &:hover:after {
+//     width: 101%;
+//     height: 100%;
+//     bottom: 0;
+//   }
 
-  > .social-post-icons {
-    margin-top: -1em;
-    transition: .3s ease-in-out;
-  }
+//   > .social-post-icons {
+//     margin-top: -1em;
+//     transition: .3s ease-in-out;
+//   }
 
-  &:hover .social-post-icons {
-    opacity: 1;
-    margin-top: 1em;
-  }
-}
+//   &:hover .social-post-icons {
+//     opacity: 1;
+//     margin-top: 1em;
+//   }
+// }
 
 .social-media-icons {
 

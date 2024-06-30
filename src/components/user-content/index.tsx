@@ -6,6 +6,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TerminalIcon from '@mui/icons-material/Terminal';
 
 export const UserContent = () => {
+
     return (
         <div className="user-content">
             <h2><span className={'font-bold text-yellow-400 text-5xl'}>{'{'}</span> Besjon <span className={'font-bold text-yellow-400 text-5xl'}>{'}'}</span></h2>

@@ -5,19 +5,21 @@ import Science from '../../assets/images/datascience.svg';
 import Analytics from '../../assets/images/analytics.svg';
 import { useInView, animated } from '@react-spring/web'
 import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
+import { useMediaQuery } from '@mui/material';
 import Image from "next/image";
 
-const InterestElement = (props: { interestTitle: any; interestDescription: any; position: any; interestImagePath: any; }) => {
+const InterestElement = (props: { interestTitle: any; interestDescription: any; position: any; interestImagePath: any; style: React.CSSProperties }) => {
     const title = props.interestTitle;
     const text = props.interestDescription;
     const position = props.position;
     const image = props.interestImagePath;
+    const style = props.style
 
     return (
         <div className={`interest-element 
                         rounded shadow-dark 
                         padding-30 
-                        ${position}`}>
+                        ${position}`} style={style}>
             {position === 'center-pos' ? <span>Just do it 💻</span> : ""}
             <Image
                 src={image}
@@ -32,6 +34,8 @@ const InterestElement = (props: { interestTitle: any; interestDescription: any; 
 }
 
 export const InterestView = () => {
+
+    const isMobile = useMediaQuery('(max-width: 599px)');
 
     const [ref, springs] = useInView(
         () => ({
@@ -72,9 +76,9 @@ export const InterestView = () => {
     ];
 
     return (
-        <animated.div className="interest-container" ref={ref} style={springs}>
+        <animated.div className="interest-container" ref={ref} style={isMobile ? {...springs, display: "flex", flexDirection: 'column',padding: "10px 15px"}:springs}>
             <h2 className={'header-title'}>Research Interests<span>.</span></h2>
-            <div className="interest-element-container">
+            <div className="interest-element-container" style={isMobile ? {flexDirection: "column", alignItems: "center"} : {}}>
                 {researchInterest.map((interest) => (
                     <InterestElement
                         interestTitle={interest.title}
@@ -82,6 +86,7 @@ export const InterestView = () => {
                         interestImagePath={interest.icon}
                         position={interest.position}
                         key={interest.title}
+                        style={isMobile ? { width: "90%", marginBottom: "15px", marginTop: "0" }:{}}
                     />
                 ))}
             </div>

@@ -25,6 +25,11 @@
     width: 63%;
     margin-left: 26.5%;
   }
+
+  @media (max-width: 599px) {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 /* Main Button Style */

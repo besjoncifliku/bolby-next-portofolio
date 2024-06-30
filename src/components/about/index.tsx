@@ -7,8 +7,16 @@ import UserProfileImg from '../../assets/images/about_user_profile.png';
 import CoffeeIcon from '@mui/icons-material/Coffee';
 import { useInView, animated } from '@react-spring/web'
 import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
+import { useMediaQuery } from '@mui/material';
 
 export const AboutView = () => {
+
+    const isMobile = useMediaQuery('(max-width: 599px)');
+    const mobileStyles : React.CSSProperties = {
+        flexDirection: "column",
+        width: "100%",
+        margin: "0 0"
+    }
 
     const [ref, springs] = useInView(
         () => ({
@@ -28,10 +36,10 @@ export const AboutView = () => {
     );
 
     return (
-        <animated.div className="about-me" ref={ref} style={springs}>
+        <animated.div className="about-me" ref={ref} style={isMobile ? {...springs, display: "flex", flexDirection: 'column',padding: "10px 15px"}:springs}>
             <h2 className={'header-title'}>About Me<span>.</span></h2>
-            <div className={'about-section'}>
-                <div className={'about-profile'}>
+            <div className={'about-section'} style={isMobile ? mobileStyles : {}}>
+                <div className={'about-profile'} style={isMobile ? { margin: "auto auto"} : {}}>
                     <div className={'about-profile-image'}>
                         <Image
                             src={UserProfileImg}

@@ -1,9 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react'
+import { useMediaQuery } from '@mui/material';
 import '../../sass/_header.scss';
 
 export const SpotifyBadge = () => {
+
+    const isMobile = useMediaQuery('(max-width: 599px)');
+    const mobileStyles = {
+        right: "7.5%"
+    }
+
     return (
-        <div className="spotify-badge-card">
+        <div className="spotify-badge-card" style={isMobile ? mobileStyles : {}}>
             <div className="top">
                 <div className="pfp">
                     <div className="playing">

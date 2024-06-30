@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 // Contact Forms, inputs, buttons
-export const ContactForm = styled.form`
-  width: 300px;
+export const ContactForm = styled.form<{ isMobile: boolean }>`
+  width: ${(props) => (props.isMobile ? '100%' : '300px')};
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export const ContactInput = styled.input`
-    width: 650px;
+export const ContactInput = styled.input<{ isMobile: boolean }>`
+    width: ${(props) => (props.isMobile ? '100%' : '650px')};
     height: 60px;
     border: 0;
     border-radius: 30px;
@@ -42,12 +42,12 @@ export const ContactInput = styled.input`
 `;
 
 export const ContactSubject = styled(ContactInput)`
-  width: 650px;
+  width: ${(props) => (props.isMobile ? '100%' : '650px')};
   margin-bottom: 20px;
 `;
 
-export const ContactMessage = styled.textarea`
-  width: 650px;
+export const ContactMessage = styled.textarea<{ isMobile: boolean }>`
+  width: ${(props) => (props.isMobile ? '100%' : '650px')};
   height: 140px;
   border: 0;
   padding: 20px;

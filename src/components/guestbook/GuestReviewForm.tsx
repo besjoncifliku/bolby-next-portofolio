@@ -10,18 +10,18 @@ import {
     ErrorMessage
 } from "@/styled-components/contact.styled";
 import { Formik } from "formik";
-import { useFocus } from "@/hooks/useFocus";
+// import { useFocus } from "@/hooks/useFocus";
 
 export const GuestReviewForm = ({}) => {
-    const [nameRefFocus, sateNameRefFocus] = useFocus()
-    const [messageRefFocus, sateMessageRefFocus] = useFocus()
-    const [linkRefFocus, sateLinkRefFocus] = useFocus()
+    // const [nameRefFocus, sateNameRefFocus] = useFocus()
+    // const [messageRefFocus, sateMessageRefFocus] = useFocus()
+    // const [linkRefFocus, sateLinkRefFocus] = useFocus()
 
 
     useEffect(() => {
-        if (!nameRefFocus || !messageRefFocus || !linkRefFocus) {
-            return;
-        }
+        // if (!nameRefFocus || !messageRefFocus || !linkRefFocus) {
+        //     return;
+        // }
         // nameRef.current.removeEventListener('click', handleClick);
     }, []);
 

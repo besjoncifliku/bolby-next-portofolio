@@ -8,11 +8,13 @@ import { ContactView } from "@/components/contact";
 import { AnimatedText } from "@/components/animated-text";
 import '../../sass/_style.scss';
 import { SocialMediaSection } from "@/containers/social-media";
+import { useMediaQuery } from '@mui/material';
 import {GuestBook} from "@/components/guestbook";
 import {GuestReviewForm} from "@/components/guestbook/GuestReviewForm";
 import {ExpandibleForm} from "@/components/_generics/ExpandibleForm";
 
 export const Content = () => {
+    const isMobile = useMediaQuery("(max-width: 599px)");
     return (
         <div className="sm:ml-64 content-container">
             <HeroSection />
@@ -21,7 +23,7 @@ export const Content = () => {
                 <InterestView />
                 <WorkView />
                 <SocialMediaSection />
-                <AnimatedText />
+                {!isMobile && <AnimatedText />}
                 <BlogView />
                 <ContactView />
             </div>
