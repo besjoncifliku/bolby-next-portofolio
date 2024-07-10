@@ -1,15 +1,10 @@
-import React from 'react'
-import { useMediaQuery } from '@mui/material';
+import React, { useContext } from 'react'
 import '../../sass/_about.scss';
+import { ResponsivenessContext } from '@/contexts/breakpoint-context';
 
 export const AboutText = () => {
 
-    const isMobile = useMediaQuery('(max-width: 599px)');
-    const mobileStyles:React.CSSProperties = {
-        display: "flex",
-        flexDirection: "column",
-        width: "100%"
-    }
+    const { styles } = useContext(ResponsivenessContext);
 
     const skillsSection = [
         {
@@ -33,15 +28,15 @@ export const AboutText = () => {
     ];
 
     return (
-        <div className="about-text shadow-dark" style={ isMobile ? mobileStyles : {}}>
-            <div className={'paragraph'} style={ isMobile ? {width: '100%'} : {}}>
+        <div className="about-text shadow-dark" style={ styles?.aboutText }>
+            <div className={'paragraph'} style={  styles?.paragraph }>
                 <p>
                     I am Besjon, an engineer with passion to develop amazing software and write clean code.
                     I like to play around with AI and develop games as well.
                 </p>
                 <a href={'#download'} className={'button'}>Open CV_Skills-Editor</a>
             </div>
-            <div className={'about-skills'} style={ isMobile ? {width: '100%', marginTop: '20px', marginLeft: '0px'} : {}}>
+            <div className={'about-skills'} style={ styles?.aboutSkills }>
                 {skillsSection.map((skill) => (
                     <div className={'skill-element'} key={skill.title}>
                         <div className={'skill-title'}>

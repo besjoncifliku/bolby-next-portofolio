@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../../sass/_general.scss";
 import UserProfileImg from "@/assets/images/about_user_profile.png";
 import Image from "next/image";
@@ -13,6 +13,7 @@ import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { Checkbox } from "@mui/material";
 import styled from "@emotion/styled";
 import { useMediaQuery } from "@mui/material";
+import { ResponsivenessContext } from "@/contexts/breakpoint-context";
 
 export const SocialAboutMeText = () => {
   const isMobile = useMediaQuery("(max-width: 599px)");
@@ -142,6 +143,7 @@ const SocialMediaDetails = (post: any) => {
 const SocialMediaPost = (post: any) => {
   const [readMore, setReadMore] = useState<boolean>(false);
   const isMobile = useMediaQuery("(max-width: 599px)");
+  const { styles } = useContext(ResponsivenessContext);
 
   const truncateText = (incomingText: string): string => {
     return incomingText.substring(0, 80).concat(`...`);
@@ -208,7 +210,7 @@ const SocialMediaPost = (post: any) => {
         </div>
       )}
       <SocialMediaDetails {...post} />
-      <div className={"p-8 pl-14 pr-14 animated-social-card rounded-xl"} style={isMobile ? {width: "100%", padding: '15px 7px'} : {}}>
+      <div className={"p-8 pl-14 pr-14 animated-social-card rounded-xl"} style={styles?.animatedSocialCard}>
         <h2 className={"text-2xl font-bold mb-3"}>{post.title}</h2>
         <p
           className={"text-lg mb-2"}

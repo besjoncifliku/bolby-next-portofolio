@@ -1,18 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { SocialMediaHeader } from "@/components/social-media-header";
 import SocialMediaTabs from "@/components/social-media-tabs";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { MouseEvent } from "react";
 
 import "../../sass/_general.scss";
-import { useMediaQuery } from "@mui/material";
+import { ResponsivenessContext } from "@/contexts/breakpoint-context";
 
 export const SocialMediaSection = () => {
   // Thanks to: https://jhey.dev/ for the amazing work to the open source community
 
   const [showDetail, setShowDetails] = useState<boolean>(false);
   const socialMediaRef = useRef<HTMLDivElement>(null);
-  const isMobile = useMediaQuery("(max-width: 599px)");
+  const { styles } = useContext(ResponsivenessContext);
 
   const handleShowDetails = (e: MouseEvent) => {
     e.preventDefault();
@@ -27,11 +27,7 @@ export const SocialMediaSection = () => {
   return (
     <div
       className="work social-media-container"
-      style={
-        isMobile
-          ? { display: "flex", flexDirection: "column", padding: "10px 15px" }
-          : {}
-      }
+      style={styles?.generalContainer}
     >
       <h2 className={"header-title"}>
         Social Media<span>.</span>
@@ -41,21 +37,10 @@ export const SocialMediaSection = () => {
         className={`social-media-section overflow-hidden ease-in-out ${
           showDetail ? "max-height" : "min-height"
         }`}
-        style={isMobile ? { padding: "0" } : {}}
+        style={styles?.socialMediaSection}
       >
         <SocialMediaHeader />
-        <div
-          className={"social-container"}
-          style={
-            isMobile
-              ? {
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "10px 15px",
-                }
-              : {}
-          }
-        >
+        <div className={"social-container"} style={styles?.generalContainer}>
           <SocialMediaTabs />
         </div>
       </div>
@@ -65,9 +50,7 @@ export const SocialMediaSection = () => {
             ? "hidden-details-gradient bottom-14"
             : "w-full hidden-container"
         } flex justify-center items-center absolute text-center`}
-        style={
-          isMobile ? { width: "92.5%", margin: "90px auto -32px -78px", borderRadius: 0 } : {}
-        }
+        style={styles?.hiddenContainer}
       >
         <a
           className={`${

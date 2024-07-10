@@ -1,16 +1,13 @@
-import React, {useEffect, useRef, useState} from 'react'
-import { useMediaQuery } from '@mui/material';
+import React, {useContext} from 'react'
 import '../../sass/_header.scss';
+import { ResponsivenessContext } from '@/contexts/breakpoint-context';
 
 export const SpotifyBadge = () => {
 
-    const isMobile = useMediaQuery('(max-width: 599px)');
-    const mobileStyles = {
-        right: "7.5%"
-    }
+    const { styles } = useContext(ResponsivenessContext);
 
     return (
-        <div className="spotify-badge-card" style={isMobile ? mobileStyles : {}}>
+        <div className="spotify-badge-card" style={styles?.spotifyBadgeCard}>
             <div className="top">
                 <div className="pfp">
                     <div className="playing">

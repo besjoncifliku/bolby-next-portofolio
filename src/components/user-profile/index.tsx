@@ -1,19 +1,16 @@
-import React from 'react'
-import { useMediaQuery } from '@mui/material';
+import React, { useContext } from 'react'
 import ProfileImg from '../../assets/images/user_profile.png';
 import '../../sass/_header.scss';
 import { UserContent } from "../user-content";
 import Image from "next/image";
+import { ResponsivenessContext } from '@/contexts/breakpoint-context';
 
 export const UserProfile = ({}) => {
 
-    const isMobile = useMediaQuery('(max-width: 599px)');
-    const mobileStyles = {
-        left: '10%'
-    }
+    const { styles } = useContext(ResponsivenessContext);
 
     return (
-        <div className={'header-profile'} style={isMobile ? mobileStyles : {}}>
+        <div className={'header-profile'} style={styles?.headerProfile}>
             <div className={'glitch flex justify-center relative'}>
                 <Image
                     src={ProfileImg}

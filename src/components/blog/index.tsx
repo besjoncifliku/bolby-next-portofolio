@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../../sass/_general.scss';
 import MachineLearning from '../../assets/images/machinelearning.svg';
 import Science from '../../assets/images/datascience.svg';
 import Analytics from '../../assets/images/analytics.svg';
 import Image from "next/image";
-import { useMediaQuery } from '@mui/material';
+import { ResponsivenessContext } from '@/contexts/breakpoint-context';
 
 const BlogElement = (props: any) => {
     const title = props.blogTitle;
@@ -35,30 +35,26 @@ const BlogElement = (props: any) => {
 }
 
 export const BlogView = () => {
-    const isMobile = useMediaQuery("(max-width: 599px)");
-    const elementMobileStyle = {
-        width: "100%",
-        marginBottom: "25px"
-    }
+    const { styles } = useContext(ResponsivenessContext);
     return (
-        <div className="blog-container" style={isMobile ? {display: "flex", flexDirection: 'column',padding: "10px 15px"}:{}}>
+        <div className="blog-container" style={styles?.generalContainer}>
             <h2 className={'header-title'}>Latest Posts<span>.</span></h2>
-            <div className="blog-element-container" style={isMobile ? { flexDirection: 'column', alignItems: 'center' }:{}}>
+            <div className="blog-element-container" style={styles?.blogElementContainer}>
                 <BlogElement blogTitle={'Implement Snowplow Analytics in Azure'}
                              blogImagePath={Science}
                              blogDate={'February 20, 2020'}
                              author={'Besjon'}
-                             style={isMobile ? { ...elementMobileStyle } : {}}/>
+                             style={styles?.elementStyle}/>
                 <BlogElement blogTitle={'Get started: Appache Kafka and Spark'}
                              blogImagePath={MachineLearning}
                              blogDate={'December 20, 2020'}
                              author={'Besjon'}
-                             style={isMobile ? { ...elementMobileStyle } : {}}/>
+                             style={styles?.elementStyle}/>
                 <BlogElement blogTitle={'Explore Docker and Kubernetes'}
                              blogImagePath={Analytics}
                              blogDate={'March 20, 2020'}
                              author={'Besjon'}
-                             style={isMobile ? { ...elementMobileStyle } : {}}/>
+                             style={styles?.elementStyle}/>
             </div>
         </div>
     );
