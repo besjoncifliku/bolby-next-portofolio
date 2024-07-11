@@ -298,14 +298,21 @@ const laptopStyles = {
   aboutText: {},
   paragraph: {},
   aboutSkills: {},
-  generalContainer: {},
+  generalContainer: {
+    width: '100%',
+  },
   aboutSection: {},
   aboutProfile: {},
   blogElementContainer: {},
   elementStyle: {},
-  contactForm: {},
+  contactForm: {
+    marginLeft: '150px',
+  },
   interestElement: {},
-  projectElement: {},
+  projectElement: {
+    width: '32%',
+    margin: '15px auto'
+  },
   animatedSocialCard: {},
   socialMediaHardCover: {},
   socialProfileImage: {},
@@ -315,11 +322,22 @@ const laptopStyles = {
   socialMediaIcons: {},
   spotifyBadgeCard: {},
   headerProfile: {},
-  socialMediaSection: {},
+  socialMediaSection: {
+    width: '100%',
+    padding: "0"
+  },
   animatedContainer: {},
-  hiddenContainer: {},
-  workFilter: {},
-  searchBar: {},
+  hiddenContainer: {
+    width: '80%',
+    margin: 'auto auto -10px -180px'
+  },
+  workFilter: {
+    flexWrap: "wrap",
+  },
+  searchBar: {
+    position: "relative",
+    marginTop: "-25px",
+  },
   styledDiv: {
     width: "auto",
     marginLeft: "auto",
@@ -333,9 +351,9 @@ const laptopStyles = {
   animatedText: {},
   formStyles: {
     contactFormWidth: '300px',
-    contactInputWidth: '650px',
-    contactSubjectWidth: '650px',
-    contactTextareaWidth: '650px'
+    contactInputWidth: '550px',
+    contactSubjectWidth: '550px',
+    contactTextareaWidth: '550px'
   }
 };
 
@@ -348,7 +366,9 @@ const largeScreenStyles = {
   aboutProfile: {},
   blogElementContainer: {},
   elementStyle: {},
-  contactForm: {},
+  contactForm: {
+    marginLeft: '200px'
+  },
   interestElement: {},
   projectElement: {},
   animatedSocialCard: {},
@@ -361,10 +381,21 @@ const largeScreenStyles = {
   spotifyBadgeCard: {},
   headerProfile: {},
   animatedContainer: {},
-  socialMediaSection: {},
-  hiddenContainer: {},
-  workFilter: {},
-  searchBar: {},
+  socialMediaSection: {
+    width: '100%',
+    padding: "0"
+  },
+  hiddenContainer: {
+    width: '80%',
+    margin: 'auto auto -10px -190px'
+  },
+  workFilter: {
+    flexWrap: "wrap",
+  },
+  searchBar: {
+    position: "relative",
+    marginTop: "-25px",
+  },
   styledDiv: {
     width: "auto",
     marginLeft: "auto",
@@ -383,6 +414,50 @@ const largeScreenStyles = {
     contactTextareaWidth: '650px'
   }
 };
+const veryLargeScreen = {
+  aboutText: {},
+  paragraph: {},
+  aboutSkills: {},
+  generalContainer: {},
+  aboutSection: {},
+  aboutProfile: {},
+  blogElementContainer: {},
+  elementStyle: {},
+  contactForm: {
+  },
+  interestElement: {},
+  projectElement: {},
+  animatedSocialCard: {},
+  socialMediaHardCover: {},
+  socialProfileImage: {},
+  guestbook: {},
+  socialContainer: {},
+  socialProfileDetails: {},
+  socialMediaIcons: {},
+  spotifyBadgeCard: {},
+  headerProfile: {},
+  animatedContainer: {},
+  socialMediaSection: {
+  },
+  hiddenContainer: {
+  },
+  workFilter: {
+    flexWrap: "wrap",
+  },
+  searchBar: {
+    position: "relative",
+    marginTop: "-25px",
+  },
+  styledDiv: {
+  },
+  animatedText: {},
+  formStyles: {
+    contactFormWidth: '300px',
+    contactInputWidth: '650px',
+    contactSubjectWidth: '650px',
+    contactTextareaWidth: '650px'
+  }
+}
 
 const determineStyle = (
   isMobile,
@@ -396,6 +471,7 @@ const determineStyle = (
   if (isSmallLaptop) return smallLaptopStyles;
   if (isLaptop) return laptopStyles;
   if (isLargeScreen) return largeScreenStyles;
+  return veryLargeScreen
 };
 
 export const ResponsivenessProvider = ({ children }) => {
@@ -404,8 +480,8 @@ export const ResponsivenessProvider = ({ children }) => {
   const isSmallLaptop = useMediaQuery(
     "(min-width:811px) and (max-width:1080px)"
   );
-  const isLaptop = useMediaQuery("(min-width: 1081px) and (max-width: 1440px)");
-  const isLargeScreen = useMediaQuery("(min-width: 1441px)");
+  const isLaptop = useMediaQuery("(min-width: 1081px) and (max-width: 1280px)");
+  const isLargeScreen = useMediaQuery("(min-width: 1281px) and (max-width: 1440px)");
   const [styles, setStyles] = useState({});
 
   useEffect(() => {
