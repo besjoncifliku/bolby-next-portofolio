@@ -73,7 +73,7 @@ export const ContactView = () => {
                               isSubmitting,
                               /* and other goodies */
                           }) => (
-                            <ContactForm onSubmit={handleSubmit} isMobile={isMobile}>
+                            <ContactForm onSubmit={handleSubmit} styles={styles.formStyles}>
                                 <ContactInputBlock>
                                     <ContactInput
                                         type="email"
@@ -82,7 +82,7 @@ export const ContactView = () => {
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.email}
-                                        isMobile={isMobile}
+                                        styles={styles.formStyles}
                                     />
                                     <ErrorMessage>{errors.email && touched.email && errors.email}</ErrorMessage>
                                 </ContactInputBlock>
@@ -93,7 +93,7 @@ export const ContactView = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.subject}
-                                    isMobile={isMobile}
+                                    styles={styles.formStyles}
                                 />
                                 <ContactInputBlock>
                                     <ContactMessage
@@ -102,7 +102,7 @@ export const ContactView = () => {
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.message}
-                                        isMobile={isMobile}
+                                        styles={styles.formStyles}
                                     />
                                     <ErrorMessage>{errors.message}</ErrorMessage>
                                 </ContactInputBlock>

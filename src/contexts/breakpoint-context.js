@@ -79,7 +79,7 @@ const mobileStyles = {
     alignItems: "flex-start",
   },
   spotifyBadgeCard: {
-    right: "7.5%",
+    right: '7.5%'
   },
   headerProfile: {
     left: "10%",
@@ -101,67 +101,196 @@ const mobileStyles = {
     flexWrap: "wrap",
   },
   searchBar: {
-    position: "relative", 
-    marginTop: "15px"
+    position: "relative",
+    marginTop: "15px",
+  },
+  styledDiv: {
+    width: "135%",
+    marginLeft: "-45px",
+    marginBottom: "25px",
+    afterWidth: "101%",
+    afterHeight: "100%",
+    afterBottom: "0",
+    spMarginTop: "1em",
+    spOpacity: "1",
+  },
+  animatedText: {},
+  formStyles: {
+    contactFormWidth: '100%',
+    contactInputWidth: '100%',
+    contactSubjectWidth: '100%',
+    contactTextareaWidth: '100%'
   }
 };
 
 const iPadStyles = {
-  aboutText: {},
-  paragraph: {},
-  aboutSkills: {},
-  generalContainer: {},
+  aboutText: {
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+  },
+  paragraph: {
+    width: "100%",
+  },
+  aboutSkills: {
+    width: "100%",
+    marginTop: "20px",
+    marginLeft: "0px",
+  },
+  generalContainer: {
+    display: "flex",
+    flexDirection: "column",
+    padding: "10px 25px",
+  },
   aboutSection: {},
   aboutProfile: {},
-  blogElementContainer: {},
-  elementStyle: {},
-  contactForm: {},
-  interestElement: {},
-  projectElement: {},
+  blogElementContainer: {
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  elementStyle: {
+    width: "100%",
+    marginBottom: "25px",
+  },
+  contactForm: {
+    width: "90%",
+    marginRight: "0",
+  },
+  interestElement: {
+    width: "90%",
+    marginBottom: "15px",
+    marginTop: "0",
+  },
+  projectElement: {
+    width: "48%",
+    margin: "15px auto",
+  },
   animatedSocialCard: {},
-  socialMediaHardCover: {},
-  socialProfileImage: {},
+  socialMediaHardCover: {
+    width: "90%",
+    margin: "auto auto",
+  },
+  socialProfileImage: {
+    top: "17%",
+    left: "2.5rem",
+  },
   guestbook: {},
   socialContainer: {},
   socialProfileDetails: {},
-  socialMediaIcons: {},
-  spotifyBadgeCard: {},
+  socialMediaIcons: {
+    width: "120%",
+    marginLeft: "-15px",
+  },
+  spotifyBadgeCard: {
+  },
   headerProfile: {},
-  animatedContainer: {},
-  socialMediaSection: {},
-  hiddenContainer: {},
-  workFilter: {},
+  animatedContainer: {
+    marginLeft: "0px",
+    marginTop: "-150px",
+    width: "100%",
+  },
+  socialMediaSection: {
+    padding: "0",
+  },
+  hiddenContainer: {
+    width: "91.5%",
+    margin: "90px auto -30px -118px",
+    borderRadius: 0,
+  },
+  workFilter: {
+    flexWrap: "wrap",
+  },
   searchBar: {
-    position: "relative", marginTop: "15px"
+    position: "relative",
+    marginTop: "15px",
+  },
+  styledDiv: {
+    width: "125%",
+    marginLeft: "-45px",
+    marginBottom: "25px",
+    afterWidth: "101%",
+    afterHeight: "100%",
+    afterBottom: "0",
+    spMarginTop: "1em",
+    spOpacity: "1",
+  },
+  animatedText: {
+    marginLeft: "-50px",
+  },
+  formStyles: {
+    contactFormWidth: '100%',
+    contactInputWidth: '400px',
+    contactSubjectWidth: '99%',
+    contactTextareaWidth: '400px'
   }
 };
 const smallLaptopStyles = {
   aboutText: {},
   paragraph: {},
   aboutSkills: {},
-  generalContainer: {},
+  generalContainer: {
+    display: "flex",
+    flexDirection: "column",
+    padding: "10px 25px",
+  },
   aboutSection: {},
   aboutProfile: {},
   blogElementContainer: {},
   elementStyle: {},
-  contactForm: {},
+  contactForm: {
+    marginLeft: '200px',
+  },
   interestElement: {},
-  projectElement: {},
+  projectElement: {
+    width: '45%',
+    margin: '15px auto'
+  },
   animatedSocialCard: {},
-  socialMediaHardCover: {},
+  socialMediaHardCover: {
+    width: "90%",
+    margin: "auto auto",
+  },
   socialProfileImage: {},
   guestbook: {},
-  socialContainer: {},
+  socialContainer: {
+    width: '100%',
+  },
   socialProfileDetails: {},
   socialMediaIcons: {},
   spotifyBadgeCard: {},
   headerProfile: {},
   animatedContainer: {},
-  socialMediaSection: {},
-  hiddenContainer: {},
-  workFilter: {},
+  socialMediaSection: {
+    width: '100%',
+    padding: "0"
+  },
+  hiddenContainer: {
+    width: '90%',
+    margin: 'auto auto -50px -140px'
+  },
+  workFilter: {
+    flexWrap: "wrap",
+  },
   searchBar: {
-    position: "relative", marginTop: "15px"
+    position: "relative",
+    marginTop: "-25px",
+  },
+  styledDiv: {
+    width: "auto",
+    marginLeft: "auto",
+    marginBottom: "auto",
+    afterWidth: "91%",
+    afterHeight: "86%",
+    afterBottom: "6rem",
+    spMarginTop: "-1em",
+    spOpacity: "0",
+  },
+  animatedText: {},
+  formStyles: {
+    contactFormWidth: '300px',
+    contactInputWidth: '650px',
+    contactSubjectWidth: '650px',
+    contactTextareaWidth: '650px'
   }
 };
 
@@ -190,8 +319,23 @@ const laptopStyles = {
   animatedContainer: {},
   hiddenContainer: {},
   workFilter: {},
-  searchBar: {
-    position: "relative", marginTop: "15px"
+  searchBar: {},
+  styledDiv: {
+    width: "auto",
+    marginLeft: "auto",
+    marginBottom: "auto",
+    afterWidth: "91%",
+    afterHeight: "86%",
+    afterBottom: "6rem",
+    spMarginTop: "-1em",
+    spOpacity: "0",
+  },
+  animatedText: {},
+  formStyles: {
+    contactFormWidth: '300px',
+    contactInputWidth: '650px',
+    contactSubjectWidth: '650px',
+    contactTextareaWidth: '650px'
   }
 };
 
@@ -220,8 +364,23 @@ const largeScreenStyles = {
   socialMediaSection: {},
   hiddenContainer: {},
   workFilter: {},
-  searchBar: {
-    position: "relative", marginTop: "15px"
+  searchBar: {},
+  styledDiv: {
+    width: "auto",
+    marginLeft: "auto",
+    marginBottom: "auto",
+    afterWidth: "91%",
+    afterHeight: "86%",
+    afterBottom: "6rem",
+    spMarginTop: "-1em",
+    spOpacity: "0",
+  },
+  animatedText: {},
+  formStyles: {
+    contactFormWidth: '300px',
+    contactInputWidth: '650px',
+    contactSubjectWidth: '650px',
+    contactTextareaWidth: '650px'
   }
 };
 
@@ -241,9 +400,9 @@ const determineStyle = (
 
 export const ResponsivenessProvider = ({ children }) => {
   const isMobile = useMediaQuery("(max-width:600px)");
-  const isIPad = useMediaQuery("(min-width:601px) and (max-width:801px)");
+  const isIPad = useMediaQuery("(min-width:601px) and (max-width:810px)");
   const isSmallLaptop = useMediaQuery(
-    "(min-width:802px) and (max-width:1080px)"
+    "(min-width:811px) and (max-width:1080px)"
   );
   const isLaptop = useMediaQuery("(min-width: 1081px) and (max-width: 1440px)");
   const isLargeScreen = useMediaQuery("(min-width: 1441px)");

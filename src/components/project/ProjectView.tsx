@@ -107,7 +107,7 @@ export const ProjectView = (props: { projects: any[]; category: any; }) => {
                 {
                     displayPosts
                         ? postsToShow.map(item =>
-                            <ProjectElement key={`projects.${item.title}`} project={item} style={styles.projectElement}/>)
+                            <ProjectElement key={`projects.${item.title}`} project={item} style={styles?.projectElement}/>)
                         : <h2 className={'text-gray-400 text-xl text-center mb-9 mt-8'}>Sorry, no projects were found. Search something else...</h2>
                 }
             </animated.div>
