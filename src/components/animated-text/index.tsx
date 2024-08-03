@@ -1,15 +1,17 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import '../../sass/_animated.scss';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useInView, animated } from '@react-spring/web'
 import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
+import { ResponsivenessContext } from '@/contexts/breakpoint-context';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const AnimatedText = () => {
 
     const refs: any[] = [];
+    const { styles } = useContext(ResponsivenessContext);
     const textElements = [
         {
             text: "DEVELOP",
@@ -85,7 +87,7 @@ export const AnimatedText = () => {
     }, []);
 
     return (
-        <div className="container-animated-text">
+        <div className="container-animated-text" style={styles?.animatedText}>
             {textElements.map((textElement, index) => (
                     <animated.h1 key={index} className={'text-animated'} ref={refsInView[index]} style={springsInView[index]}>
                         {textElement.text}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useInView, useSpring, animated } from "@react-spring/web";
 import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
 import { CenteredModal } from "@/components/_generics/CenteredModal";
@@ -6,6 +6,7 @@ import { useMediaQuery } from '@mui/material';
 
 import '../../sass/_general.scss';
 import {ProjectModal} from "@/components/project/ProjectModal";
+import { ResponsivenessContext } from '@/contexts/breakpoint-context';
 
 const ProjectElement = (props: any) => {
     const project = props.project;
@@ -55,6 +56,7 @@ export const ProjectView = (props: { projects: any[]; category: any; }) => {
     const projects: any[] = props.projects;
     const postsPerPage: number = isMobile ? 3 : 6;
     let postProjects: any = [];
+    const { styles } = useContext(ResponsivenessContext);
 
     const [postsToShow, setPostsToShow] = useState<any[]>([]);
     const [displayPosts, setDisplayPosts] = useState<boolean>(true);
@@ -91,7 +93,7 @@ export const ProjectView = (props: { projects: any[]; category: any; }) => {
         amount: buildInteractionObserverThreshold()
     });
 
-    const styles = useSpring({
+    const localStyles = useSpring({
         scale: isInView ? 1 : 0,
         config: {
             tension: 300,
@@ -101,11 +103,11 @@ export const ProjectView = (props: { projects: any[]; category: any; }) => {
 
     return (
         <div className={'project-view-container'}>
-            <animated.div style={styles} className={'project-container ' + (displayPosts ? '' : 'justify-center')}  ref={ref}>
+            <animated.div style={localStyles} className={'project-container ' + (displayPosts ? '' : 'justify-center')}  ref={ref}>
                 {
                     displayPosts
                         ? postsToShow.map(item =>
-                            <ProjectElement key={`projects.${item.title}`} project={item} style={isMobile ? {width: "90%", margin: "15px auto"} : {}}/>)
+                            <ProjectElement key={`projects.${item.title}`} project={item} style={styles?.projectElement}/>)
                         : <h2 className={'text-gray-400 text-xl text-center mb-9 mt-8'}>Sorry, no projects were found. Search something else...</h2>
                 }
             </animated.div>

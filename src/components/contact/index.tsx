@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Swal from 'sweetalert2';
 import Image from "next/image";
 import { Formik } from 'formik';
@@ -16,13 +16,15 @@ import ContactImg from '../../assets/images/contact.svg';
 import { useMediaQuery } from '@mui/material';
 import '../../sass/_general.scss';
 import '../../styled-components/contact.styled';
+import { ResponsivenessContext } from '@/contexts/breakpoint-context';
 
 export const ContactView = () => {
-    const isMobile = useMediaQuery("(max-width: 599px)");
+    const isMobile = useMediaQuery('(max-width:600px)');
+    const { styles } = useContext(ResponsivenessContext);
     return (
-        <div className={"contact-container"} style={isMobile ? {display: "flex", flexDirection: 'column',padding: "10px 15px"}:{}}>
+        <div className={"contact-container"} style={styles?.generalContainer}>
             <h2 className={'header-title'}>Drop Me a Line<span>.</span></h2>
-            <div className="contact-form-container" style={isMobile ? {display: "flex", flexDirection: 'column', padding: "10px 15px"}:{}}>
+            <div className="contact-form-container" style={styles?.generalContainer}>
                 <div className={'contact-description'}>
                     <h2>Get In Touch!</h2>
                     <p>Filling this form is boring? Then send me an <a href={'#'} className={'link'}>email</a>👋.</p>
@@ -30,10 +32,10 @@ export const ContactView = () => {
                         src={ContactImg}
                         className={'contact-me-image'}
                         alt={'Contact me'}
-                        style={isMobile ? {margin: 'auto auto'}:{}}
+                        style={styles?.aboutProfile}
                     />
                 </div>
-                <div className={'contact-form'} style={isMobile ? {width: "90%", marginRight: "0"}:{}}>
+                <div className={'contact-form'} style={styles?.contactForm}>
                     <Formik
                         initialValues={{ email: '', subject: '', message: '' }}
                         validate={values => {
@@ -71,7 +73,7 @@ export const ContactView = () => {
                               isSubmitting,
                               /* and other goodies */
                           }) => (
-                            <ContactForm onSubmit={handleSubmit} isMobile={isMobile}>
+                            <ContactForm onSubmit={handleSubmit} styles={styles?.formStyles}>
                                 <ContactInputBlock>
                                     <ContactInput
                                         type="email"
@@ -80,7 +82,7 @@ export const ContactView = () => {
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.email}
-                                        isMobile={isMobile}
+                                        styles={styles?.formStyles}
                                     />
                                     <ErrorMessage>{errors.email && touched.email && errors.email}</ErrorMessage>
                                 </ContactInputBlock>
@@ -91,7 +93,7 @@ export const ContactView = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.subject}
-                                    isMobile={isMobile}
+                                    styles={styles?.formStyles}
                                 />
                                 <ContactInputBlock>
                                     <ContactMessage
@@ -100,7 +102,7 @@ export const ContactView = () => {
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.message}
-                                        isMobile={isMobile}
+                                        styles={styles?.formStyles}
                                     />
                                     <ErrorMessage>{errors.message}</ErrorMessage>
                                 </ContactInputBlock>

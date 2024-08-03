@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../../sass/_general.scss';
 import MachineLearning from '../../assets/images/machinelearning.svg';
 import Science from '../../assets/images/datascience.svg';
 import Analytics from '../../assets/images/analytics.svg';
 import { useInView, animated } from '@react-spring/web'
 import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
-import { useMediaQuery } from '@mui/material';
 import Image from "next/image";
+import { ResponsivenessContext } from '@/contexts/breakpoint-context';
 
 const InterestElement = (props: { interestTitle: any; interestDescription: any; position: any; interestImagePath: any; style: React.CSSProperties }) => {
     const title = props.interestTitle;
@@ -35,7 +35,7 @@ const InterestElement = (props: { interestTitle: any; interestDescription: any; 
 
 export const InterestView = () => {
 
-    const isMobile = useMediaQuery('(max-width: 599px)');
+    const { styles } = useContext(ResponsivenessContext);
 
     const [ref, springs] = useInView(
         () => ({
@@ -76,9 +76,9 @@ export const InterestView = () => {
     ];
 
     return (
-        <animated.div className="interest-container" ref={ref} style={isMobile ? {...springs, display: "flex", flexDirection: 'column',padding: "10px 15px"}:springs}>
+        <animated.div className="interest-container" ref={ref} style={{...springs, ...styles?.generalContainer}}>
             <h2 className={'header-title'}>Research Interests<span>.</span></h2>
-            <div className="interest-element-container" style={isMobile ? {flexDirection: "column", alignItems: "center"} : {}}>
+            <div className="interest-element-container" style={styles?.blogElementContainer}>
                 {researchInterest.map((interest) => (
                     <InterestElement
                         interestTitle={interest.title}
@@ -86,7 +86,7 @@ export const InterestView = () => {
                         interestImagePath={interest.icon}
                         position={interest.position}
                         key={interest.title}
-                        style={isMobile ? { width: "90%", marginBottom: "15px", marginTop: "0" }:{}}
+                        style={styles?.interestElement}
                     />
                 ))}
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../../sass/_general.scss";
 import UserProfileImg from "@/assets/images/about_user_profile.png";
 import Image from "next/image";
@@ -13,6 +13,7 @@ import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { Checkbox } from "@mui/material";
 import styled from "@emotion/styled";
 import { useMediaQuery } from "@mui/material";
+import { ResponsivenessContext } from "@/contexts/breakpoint-context";
 
 export const SocialAboutMeText = () => {
   const isMobile = useMediaQuery("(max-width: 599px)");
@@ -141,21 +142,21 @@ const SocialMediaDetails = (post: any) => {
 
 const SocialMediaPost = (post: any) => {
   const [readMore, setReadMore] = useState<boolean>(false);
-  const isMobile = useMediaQuery("(max-width: 599px)");
+  const { styles } = useContext(ResponsivenessContext);
 
   const truncateText = (incomingText: string): string => {
     return incomingText.substring(0, 80).concat(`...`);
   };
 
-  const StyledDiv = styled.div<{ isMobile: boolean }>`
+  const StyledDiv = styled.div<{ customStyle: any }>`
     &.social-media-post {
       position: relative;
       z-index: 1;
       padding: 2.2rem 2rem 2rem;
       cursor: pointer;
-      width: ${(props) => (props.isMobile ? '135%' : 'auto')};
-      margin-left: ${(props) => (props.isMobile ? '-45px' : 'auto')};
-      margin-bottom: ${(props) => (props.isMobile ? '25px' : 'auto')};
+      width: ${(props) => props.customStyle?.width};
+      margin-left: ${(props) => props.customStyle?.marginLeft};
+      margin-bottom: ${(props) => props.customStyle?.marginBottom};
 
       > .animated-social-card {
         background: linear-gradient(270deg, #ce68d9, #45c6db, #45db79);
@@ -168,12 +169,12 @@ const SocialMediaPost = (post: any) => {
 
       &:after {
         content: "";
-        width: ${(props) => (props.isMobile ? '101%' : '91%')};
-        height: ${(props) => (props.isMobile ? '100%' : '86%')};
+        width: ${(props) => props.customStyle?.afterWidth};
+        height: ${(props) => props.customStyle?.afterHeight};
         position: absolute;
         border-radius: 8px;
         right: 0;
-        bottom: ${(props) => (props.isMobile ? '0' : '6rem')};
+        bottom: ${(props) => props.customStyle?.afterBottom};
         transition: 0.3s ease-in-out;
         z-index: -1;
         background-color: #353353;
@@ -186,8 +187,8 @@ const SocialMediaPost = (post: any) => {
       }
 
       > .social-post-icons {
-        margin-top: ${(props) => (props.isMobile ? '1em' : '-1em')};
-        opacity: ${(props) => (props.isMobile ? '1' : '0')};
+        margin-top: ${(props) => props.customStyle?.spMarginTop};
+        opacity: ${(props) => props.customStyle?.spOpacity};
         transition: 0.3s ease-in-out;
       }
 
@@ -199,7 +200,7 @@ const SocialMediaPost = (post: any) => {
   `;
 
   return (
-    <StyledDiv className="social-media-post" isMobile={isMobile}>
+    <StyledDiv className="social-media-post" customStyle={styles?.styledDiv}>
       {post.pinned && (
         <div className={"flex justify-end text-gray-300 mb-2"}>
           <PushPinOutlinedIcon />
@@ -208,7 +209,7 @@ const SocialMediaPost = (post: any) => {
         </div>
       )}
       <SocialMediaDetails {...post} />
-      <div className={"p-8 pl-14 pr-14 animated-social-card rounded-xl"} style={isMobile ? {width: "100%", padding: '15px 7px'} : {}}>
+      <div className={"p-8 pl-14 pr-14 animated-social-card rounded-xl"} style={styles?.animatedSocialCard}>
         <h2 className={"text-2xl font-bold mb-3"}>{post.title}</h2>
         <p
           className={"text-lg mb-2"}

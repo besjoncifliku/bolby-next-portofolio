@@ -1,17 +1,17 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect, useContext} from 'react'
 import '../../sass/_general.scss';
 import { ProjectView } from "@/components/project/ProjectView";
 import { useInView, animated } from '@react-spring/web'
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import { buildInteractionObserverThreshold } from "@/utils/Threshold.utils";
-import { useMediaQuery } from '@mui/material';
+import { ResponsivenessContext } from '@/contexts/breakpoint-context';
 
 export const WorkView = () => {
     const [filter, setFilter] = useState('all');
     const [allProjects, setAllProjects] = useState<any[]>([]);
     const [projects, setProjects] = useState<any[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
-    const isMobile = useMediaQuery('(max-width: 599px)');
+    const { styles } = useContext(ResponsivenessContext);
 
     const filtersProject: {[key: string]: string} = {
         'all': 'See All',
@@ -75,10 +75,10 @@ export const WorkView = () => {
     );
 
     return (
-        <animated.div className="work" ref={ref} style={isMobile ? {...springs, display: "flex", flexDirection: 'column',padding: "10px 15px"}:springs}>
+        <animated.div className="work" ref={ref} style={{ ...springs, ...styles?.generalContainer }}>
             <h2 className={'header-title'}>Recent Projects<span>.</span></h2>
             <div className={'work-section'}>
-                <div className={'work-filter flex relative items-center'} style={isMobile ? { flexWrap: "wrap"} : {}}>
+                <div className={'work-filter flex relative items-center'} style={styles?.workFilter}>
                     {Object.entries(filtersProject).map(([filterKey, filterDisplayName]) => (
                         <a href={`/#`}
                            key={filterKey}
@@ -89,7 +89,7 @@ export const WorkView = () => {
                         </a>
                     ))}
 
-                    <div className={'search-bar absolute right-7 w-5/12'} style={isMobile ? { position: "relative", marginTop: "15px" } : {}}>
+                    <div className={'search-bar absolute right-7 w-5/12'} style={styles?.searchBar}>
                         <label htmlFor="simple-search">Search</label>
                         <div className="relative w-full">
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
