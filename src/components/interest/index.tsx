@@ -76,7 +76,7 @@ export const InterestView = () => {
     ];
 
     return (
-        <animated.div className="interest-container" ref={ref} style={{...springs, ...styles?.generalContainer}}>
+        <animated.div className="interest-container" ref={ref} style={{...springs, ...styles?.generalContainer}} id="Research">
             <h2 className={'header-title'}>Research Interests<span>.</span></h2>
             <div className="interest-element-container" style={styles?.blogElementContainer}>
                 {researchInterest.map((interest) => (

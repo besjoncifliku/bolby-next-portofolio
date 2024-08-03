@@ -37,7 +37,7 @@ const BlogElement = (props: any) => {
 export const BlogView = () => {
     const { styles } = useContext(ResponsivenessContext);
     return (
-        <div className="blog-container" style={styles?.generalContainer}>
+        <div className="blog-container" style={styles?.generalContainer} id='Blog'>
             <h2 className={'header-title'}>Latest Posts<span>.</span></h2>
             <div className="blog-element-container" style={styles?.blogElementContainer}>
                 <BlogElement blogTitle={'Implement Snowplow Analytics in Azure'}
