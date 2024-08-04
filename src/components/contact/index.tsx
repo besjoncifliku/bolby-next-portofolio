@@ -22,7 +22,7 @@ export const ContactView = () => {
     const isMobile = useMediaQuery('(max-width:600px)');
     const { styles } = useContext(ResponsivenessContext);
     return (
-        <div className={"contact-container"} style={styles?.generalContainer}>
+        <div className={"contact-container"} style={styles?.generalContainer} id='Contact'>
             <h2 className={'header-title'}>Drop Me a Line<span>.</span></h2>
             <div className="contact-form-container" style={styles?.generalContainer}>
                 <div className={'contact-description'}>

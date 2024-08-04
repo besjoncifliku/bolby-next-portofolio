@@ -75,7 +75,7 @@ export const WorkView = () => {
     );
 
     return (
-        <animated.div className="work" ref={ref} style={{ ...springs, ...styles?.generalContainer }}>
+        <animated.div className="work" ref={ref} style={{ ...springs, ...styles?.generalContainer }} id='Projects'>
             <h2 className={'header-title'}>Recent Projects<span>.</span></h2>
             <div className={'work-section'}>
                 <div className={'work-filter flex relative items-center'} style={styles?.workFilter}>

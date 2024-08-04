@@ -24,9 +24,9 @@ export const SidebarView = () => {
                     className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 >
                 <span className="sr-only" style={{ border: '2px solid red' }}>Open sidebar</span>
-                <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                      xmlns="http://www.w3.org/2000/svg">
-                    <path clip-rule="evenodd" fill-rule="evenodd"
+                    <path clipRule="evenodd" fillRule="evenodd"
                           d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                 </svg>
             </button>
@@ -40,12 +40,15 @@ export const SidebarView = () => {
                     <ul className="space-y-2 font-medium sidebar-entries">
                         {Object.entries(sidebarEntries).map(([menu, IconElement]) => (
                             // eslint-disable-next-line react/jsx-key
-                            <li>
-                                <a href="#"
+                            <li key={menu}>
+                                <a href={`#${menu}`} onClick={(event)=>{
+                                    event?.preventDefault();
+                                    document?.getElementById(menu)?.scrollIntoView({ behavior: "smooth" });
+                                }}
                                    className="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-yellow-400 dark:hover:bg-gray-700 group">
                                     {<IconElement
                                         className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 dark:group-hover:text-white"
-                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                         viewBox="0 0 22 21"/>}
                                     <span className="ms-3 mt-1 tracking-wide">{menu}
                                         {menu === 'Blog' &&
@@ -68,10 +71,10 @@ export const SidebarView = () => {
                                     className="ms-auto -mx-1.5 -my-1.5 bg-blue-50 inline-flex justify-center items-center w-6 h-6 text-blue-900 rounded-lg focus:ring-2 focus:ring-blue-400 p-1 hover:bg-blue-200 h-6 w-6 dark:bg-blue-900 dark:text-blue-400 dark:hover:bg-blue-800"
                                     data-dismiss-target="#dropdown-cta" aria-label="Close">
                                 <span className="sr-only">Close</span>
-                                <svg className="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                <svg className="w-2.5 h-2.5" xmlns="http://www.w3.org/2000/svg"
                                      fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                          stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                          strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                                 </svg>
                             </button>
                         </div>

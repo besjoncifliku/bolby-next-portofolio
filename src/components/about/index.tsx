@@ -31,7 +31,7 @@ export const AboutView = () => {
     );
 
     return (
-        <animated.div className="about-me" ref={ref} style={{ ...springs, ...styles?.generalContainer }}>
+        <animated.div id="About" className="about-me" ref={ref} style={{ ...springs, ...styles?.generalContainer }}>
             <h2 className={'header-title'}>About Me<span>.</span></h2>
             <div className={'about-section'} style={styles?.aboutSection}>
                 <div className={'about-profile'} style={styles?.aboutProfile}>

@@ -18,7 +18,7 @@ export const HeroSection = () => {
     const { styles } = useContext(ResponsivenessContext);
 
     return (
-        <div className="header-container">
+        <div className="header-container" id="Home">
             <UserProfile />
             <div className="animated-container" style={styles?.animatedContainer} onMouseMove={({clientX: x, clientY: y}) => set({xy: calc(x, y)})}>
                 <animated.div className="card4" style={{transform: props.xy.to(trans4)}}/>
