@@ -86,7 +86,7 @@ export const SidebarView = () => {
                     </div>
 
                     <div className={'absolute bottom-2 left-12 text-gray-400 text-xs tracking-widest text-center'}>
-                        <p>&copy; {new Date().getFullYear()} Besjon Cifliku</p>
+                        <p>&copy; {new Date().getFullYear()} Çifliku brothers</p>
                     </div>
                 </div>
             </aside>
