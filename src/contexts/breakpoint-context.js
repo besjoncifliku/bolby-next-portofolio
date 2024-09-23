@@ -449,6 +449,14 @@ const veryLargeScreen = {
     marginTop: "-25px",
   },
   styledDiv: {
+    width: "auto",
+    marginLeft: "auto",
+    marginBottom: "auto",
+    afterWidth: "91%",
+    afterHeight: "86%",
+    afterBottom: "6rem",
+    spMarginTop: "-1em",
+    spOpacity: "0",
   },
   animatedText: {},
   formStyles: {
