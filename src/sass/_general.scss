@@ -95,6 +95,15 @@
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
+  position: relative;
+  border-radius: 15px;
+}
+
+.project-image h2 {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  z-index: 1000;
 }
 
 .project-info {
