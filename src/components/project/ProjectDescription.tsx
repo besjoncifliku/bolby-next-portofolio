@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 export const ProjectDescription:FC<any> = (props) => {
     return (
-        <div className="h-3/4 text-gray-700 mt-4">
+        <div className="h-3/4 text-gray-700 mt-4" style={{ height: 'fit' }}>
             <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                 {props.title}
             </h5>

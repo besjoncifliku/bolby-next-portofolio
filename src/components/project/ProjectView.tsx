@@ -12,6 +12,7 @@ const ProjectElement = (props: any) => {
   const project = props.project;
   const [open, setOpen] = useState(false);
   const style = props.style;
+  const isPortrait = useMediaQuery("(max-width: 1080px)")
 
   const handleOpen = () => {
     setOpen(true);
@@ -26,7 +27,7 @@ const ProjectElement = (props: any) => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 1000,
+    width: isPortrait ? '95vw' : 1000,
     bgcolor: "transparent",
   };
 

@@ -158,6 +158,79 @@
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
 }
 
+.github-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.github-button .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.github-button svg path {
+  transition: 400ms;
+}
+
+.github-button:hover {
+  background-color: transparent;
+}
+
+.github-button:hover .text {
+  color: #181717;
+}
+
+.github-button:hover svg path {
+  fill: #181717;
+}
+
+/* From Uiverse.io by coderlab005 */ 
+.preview-button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  gap: 15px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1em;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(50deg, #1900f5, #7c09a3, #a40675);
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.preview-button svg {
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.preview-button span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.preview-button:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+.preview-button:hover span {
+  transform: translateX(7px);
+}
+
+
 ////////////////////////////////////////
 /////////// Research Interest //////////
 ////////////////////////////////////////
