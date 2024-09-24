@@ -6,6 +6,7 @@ export const ContactForm = styled.form<{ styles: any }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: ${(props) => props.styles?.formMargin};
 `;
 
 export const ContactInput = styled.input<{ styles: any }>`
@@ -41,7 +42,7 @@ export const ContactInput = styled.input<{ styles: any }>`
     }
 `;
 
-export const ContactSubject = styled(ContactInput)`
+export const ContactSubject = styled(ContactInput)<{ styles: any }>`
   width: ${(props) => props.styles?.contactSubjectWidth};
   margin-bottom: 20px;
 `;
@@ -50,6 +51,7 @@ export const ContactMessage = styled.textarea<{ styles: any }>`
   width: ${(props) => props.styles?.contactTextareaWidth};
   height: 140px;
   border: 0;
+  margin: ${(props) => props.styles?.margin};
   padding: 20px;
   font-family: inherit;
   border-radius: 30px;
