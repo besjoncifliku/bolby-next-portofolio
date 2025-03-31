@@ -1,8 +1,14 @@
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+**References:**
+> This is based on the bolby template provided by ThemeForests https://www.youtube.com/watch?v=7btxeoPrIeY. The original work is based on Wordpress, however we decided to create a similar open source template in NextJS.
+> The icons are retrieved from Flaticon.com
 
 # Intro
 
-This is my personal website. It's configurable, so feel free to use it, or any parts of it for yourself :)
+This is a personal website template. It's configurable, so feel free to use it, or any parts of it for yourself :)
 
 About
 A self-hosted developer homepage, to showcase your projects, posts, coding stats, and more.
